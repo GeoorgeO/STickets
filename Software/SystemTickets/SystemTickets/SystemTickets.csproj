@@ -101,6 +101,12 @@
     <Compile Include="Formularios\Catalogos\Frm_Cat_Botones.Designer.cs">
       <DependentUpon>Frm_Cat_Botones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Pantallas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Pantallas.Designer.cs">
+      <DependentUpon>Frm_Cat_Pantallas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Botones.resx">
       <DependentUpon>Frm_Cat_Botones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Pantallas.resx">
+      <DependentUpon>Frm_Cat_Pantallas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
