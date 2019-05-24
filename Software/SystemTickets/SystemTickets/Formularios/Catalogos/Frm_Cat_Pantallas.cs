@@ -22,22 +22,17 @@ namespace SystemTickets.Formularios.Catalogos
         {
 
         }
-<<<<<<< HEAD
-
         private void Frm_Cat_Pantallas_Load(object sender, EventArgs e)
         {
 
         }
-=======
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
-
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
         }
->>>>>>> origin/master
     }
 }
