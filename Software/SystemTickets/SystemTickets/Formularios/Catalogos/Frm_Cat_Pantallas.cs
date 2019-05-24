@@ -22,5 +22,14 @@ namespace SystemTickets.Formularios.Catalogos
         {
 
         }
+        private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
