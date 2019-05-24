@@ -1,4 +1,5 @@
 Scripts\BaseDatos\STickets_CreateDB.sql
+Scripts\ClavesForaneas\drop_llaves_Foraneas.sql
 Scripts\Tablas\ctrl_Actividad_imagenes.sql
 Scripts\Tablas\ctrl_Actividades_Alertas.sql
 Scripts\Tablas\ctrl_Actividad_Asignacion.sql

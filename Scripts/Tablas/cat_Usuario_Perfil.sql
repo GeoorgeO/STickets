@@ -1,17 +1,14 @@
 USE [STickets]
 GO
 
-IF OBJECT_ID('cat_Usuario_Perfil') IS NOT NULL
-	begin
-		select 0
-	end
-ELSE
-	begin
+if exists (SELECT * FROM sysobjects WHERE type = 'U' AND name = 'cat_Usuario_Perfil')
+begin
+   drop table cat_Usuario_Perfil
+end
+	
+go
 
-		CREATE TABLE [dbo].[cat_Usuario_Perfil](
-			[c_codigo_usu] [char](7) NULL,
-			[c_codigo_per] [char](4) NULL
-		) ON [PRIMARY]
-
-
-	end
+CREATE TABLE [dbo].[cat_Usuario_Perfil](
+	[c_codigo_usu] [char](7) NULL,
+	[c_codigo_per] [char](4) NULL
+) ON [PRIMARY]

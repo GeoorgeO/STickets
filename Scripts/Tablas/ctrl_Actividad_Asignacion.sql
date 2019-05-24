@@ -1,16 +1,14 @@
 USE [STickets]
 GO
 
-IF OBJECT_ID('ctrl_Actividad_Asignacion') IS NOT NULL
-	begin
-		select 0
-	end
-ELSE
-	begin
+if exists (SELECT * FROM sysobjects WHERE type = 'U' AND name = 'ctrl_Actividad_Asignacion')
+begin
+   drop table ctrl_Actividad_Asignacion
+end
+	
+go
 
-		CREATE TABLE [dbo].[ctrl_Actividad_Asignacion](
-			[c_codigo_folact] [char](10) NULL,
-			[c_codigo_usu_asignado] [char](7) NULL
-		) ON [PRIMARY]
-
-	end
+CREATE TABLE [dbo].[ctrl_Actividad_Asignacion](
+	[c_codigo_folact] [char](10) NULL,
+	[c_codigo_usu_asignado] [char](7) NULL
+) ON [PRIMARY]
