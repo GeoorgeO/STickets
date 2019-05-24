@@ -19,6 +19,7 @@ namespace CapaDeDatos.Clases
             Exito = true;
             try
             {
+                _conexion.NombreProcedimiento = "STic_CatPantallas_Select";
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -46,6 +47,7 @@ namespace CapaDeDatos.Clases
             Exito = true;
             try
             {
+                _conexion.NombreProcedimiento = "STic_CatPantallas_Insert";
                 _dato.CadenaTexto = v_nombre_pan;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_nombre_pan");
                 _conexion.EjecutarDataset();
@@ -75,6 +77,7 @@ namespace CapaDeDatos.Clases
             Exito = true;
             try
             {
+                _conexion.NombreProcedimiento = "STic_CatPantallas_Update";
                 _dato.CadenaTexto = c_codigo_pan;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_pan");
                 _dato.CadenaTexto = v_nombre_pan;
@@ -106,6 +109,7 @@ namespace CapaDeDatos.Clases
             Exito = true;
             try
             {
+                _conexion.NombreProcedimiento = "STic_CatPantallas_Delete";
                 _dato.CadenaTexto = c_codigo_pan;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_pan");
                 _conexion.EjecutarDataset();
