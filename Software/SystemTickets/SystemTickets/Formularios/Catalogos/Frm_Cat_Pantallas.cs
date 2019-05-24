@@ -31,11 +31,41 @@ namespace SystemTickets
                 m_FormDefInstance = value;
             }
         }
+
+        public bool isEdit { get; private set; }
+
         public Frm_Cat_Pantallas()
         {
             InitializeComponent();
         }
-        
+        private void MakeTablaPantallas()
+        {
+            DataTable table = new DataTable("FirstTable");
+            DataColumn column = new DataColumn();
+            table.Reset();
+
+            // DataRow row;
+            column.DataType = typeof(string);
+            column.ColumnName = "c_codigo_pam";
+            column.AutoIncrement = false;
+            column.Caption = "Id";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "v_nombre_pan";
+            column.AutoIncrement = false;
+            column.Caption = "Nombre";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+            
+            dtgPantallas.DataSource = table;
+        }
         private void dtgPantallas_Click(object sender, EventArgs e)
         {
             try
@@ -55,18 +85,99 @@ namespace SystemTickets
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            LimpiarCampos();
+        }
 
+        private void LimpiarCampos()
+        {
+            txtCodigo.Text = string.Empty;
+            txtNombre.Text = string.Empty;
+            dtgPantallas.DataSource = null;
+            MakeTablaPantallas();
+            txtNombre.Focus();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if(txtNombre.Text!= string.Empty)
+            {
+                if(isEdit==false)
+                {
+                    InsertarRegistro();
+                }
+                else
+                {
+                    ActualizarRegistro();
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("El nombre de la pantalla mo puede Estar Vacio [Campo Requerido]");
+            }
+        }
 
+        private void InsertarRegistro()
+        {
+            CLS_CatPantallas ins = new CLS_CatPantallas();
+            ins.v_nombre_pan = txtNombre.Text;
+            ins.MtdInsertarPantalla();
+            if(ins.Exito)
+            {
+                dtgPantallas.DataSource = ins.Datos;
+                XtraMessageBox.Show("Se ha Insertado en registro con exito");
+            }
+            else
+            {
+                XtraMessageBox.Show(ins.Mensaje);
+            }
+        }
+
+        private void ActualizarRegistro()
+        {
+            CLS_CatPantallas ins = new CLS_CatPantallas();
+            ins.c_codigo_pan = txtCodigo.Text;
+            ins.v_nombre_pan = txtNombre.Text;
+            ins.MtdActualizarPantalla();
+            if (ins.Exito)
+            {
+                dtgPantallas.DataSource = ins.Datos;
+                XtraMessageBox.Show("Se ha Insertado en registro con exito");
+            }
+            else
+            {
+                XtraMessageBox.Show(ins.Mensaje);
+            }
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (isEdit == true)
+            {
+                EliminarRegistro();
 
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha seleccionado registro a Eliminar [Registro Requerido]");
+            }
         }
+
+        private void EliminarRegistro()
+        {
+            CLS_CatPantallas ins = new CLS_CatPantallas();
+            ins.c_codigo_pan = txtCodigo.Text;
+            ins.MtdEliminarPantalla();
+            if (ins.Exito)
+            {
+                CargarPantallas();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+            }
+            else
+            {
+                XtraMessageBox.Show(ins.Mensaje);
+            }
+        }
+
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
@@ -74,6 +185,7 @@ namespace SystemTickets
 
         private void Frm_Cat_Pantallas_Shown(object sender, EventArgs e)
         {
+            MakeTablaPantallas();
             CargarPantallas();
         }
 

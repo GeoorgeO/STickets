@@ -34,5 +34,9 @@ BEGIN
 	UPDATE       cat_Pantallas
 	SET               v_nombre_pan = @v_nombre_pan
 	WHERE        (c_codigo_pan = @c_codigo_pan)
+
+	SELECT        c_codigo_pan, v_nombre_pan
+	FROM            cat_Pantallas
+	WHERE        (c_codigo_pan = @c_codigo_pan)
 END
 GO
