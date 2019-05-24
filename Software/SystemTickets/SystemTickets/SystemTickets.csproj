@@ -95,17 +95,77 @@
     <Compile Include="Conexiones\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Actividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Actividades.Designer.cs">
+      <DependentUpon>Frm_Cat_Actividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Cat_Botones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Cat_Botones.Designer.cs">
       <DependentUpon>Frm_Cat_Botones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Correos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Correos.Designer.cs">
+      <DependentUpon>Frm_Cat_Correos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Departamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Departamentos.Designer.cs">
+      <DependentUpon>Frm_Cat_Departamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Departamento_Actividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Departamento_Actividad.Designer.cs">
+      <DependentUpon>Frm_Cat_Departamento_Actividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Jefes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Jefes.Designer.cs">
+      <DependentUpon>Frm_Cat_Jefes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Cat_Pantallas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\Catalogos\Frm_Cat_Pantallas.Designer.cs">
       <DependentUpon>Frm_Cat_Pantallas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Pantallas_Botones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Pantallas_Botones.Designer.cs">
+      <DependentUpon>Frm_Cat_Pantallas_Botones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Perfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Perfiles.Designer.cs">
+      <DependentUpon>Frm_Cat_Perfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Perfil_PantallaBotones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Perfil_PantallaBotones.Designer.cs">
+      <DependentUpon>Frm_Cat_Perfil_PantallaBotones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Catalogos\Frm_Cat_Usuarios.Designer.cs">
+      <DependentUpon>Frm_Cat_Usuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_Ctrl_Actividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Control\Frm_Ctrl_Actividad.Designer.cs">
+      <DependentUpon>Frm_Ctrl_Actividad.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Principal.cs">
       <SubType>Form</SubType>
@@ -130,11 +190,41 @@
     <EmbeddedResource Include="Conexiones\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Actividades.resx">
+      <DependentUpon>Frm_Cat_Actividades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Botones.resx">
       <DependentUpon>Frm_Cat_Botones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Correos.resx">
+      <DependentUpon>Frm_Cat_Correos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Departamentos.resx">
+      <DependentUpon>Frm_Cat_Departamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Departamento_Actividad.resx">
+      <DependentUpon>Frm_Cat_Departamento_Actividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Jefes.resx">
+      <DependentUpon>Frm_Cat_Jefes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Pantallas.resx">
       <DependentUpon>Frm_Cat_Pantallas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Pantallas_Botones.resx">
+      <DependentUpon>Frm_Cat_Pantallas_Botones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Perfiles.resx">
+      <DependentUpon>Frm_Cat_Perfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Perfil_PantallaBotones.resx">
+      <DependentUpon>Frm_Cat_Perfil_PantallaBotones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Catalogos\Frm_Cat_Usuarios.resx">
+      <DependentUpon>Frm_Cat_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Control\Frm_Ctrl_Actividad.resx">
+      <DependentUpon>Frm_Ctrl_Actividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
