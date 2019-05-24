@@ -17,5 +17,20 @@ namespace SystemTickets
         {
             InitializeComponent();
         }
+
+        private void Frm_Cat_Botones_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barLargeButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,5 +22,10 @@ namespace SystemTickets.Formularios.Catalogos
         {
 
         }
+
+        private void Frm_Cat_Pantallas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
