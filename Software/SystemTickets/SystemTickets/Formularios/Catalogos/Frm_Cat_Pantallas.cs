@@ -10,10 +10,27 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
 
-namespace SystemTickets.Formularios.Catalogos
+namespace SystemTickets
 {
     public partial class Frm_Cat_Pantallas : DevExpress.XtraEditors.XtraForm
     {
+        public string c_codigo_usu { get; set; }
+        public string c_codigo_per { get; set; }
+        public string c_codigo_pan { get; set; }
+        private static Frm_Cat_Pantallas m_FormDefInstance;
+        public static Frm_Cat_Pantallas DefInstance
+        {
+            get
+            {
+                if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
+                    m_FormDefInstance = new Frm_Cat_Pantallas();
+                return m_FormDefInstance;
+            }
+            set
+            {
+                m_FormDefInstance = value;
+            }
+        }
         public Frm_Cat_Pantallas()
         {
             InitializeComponent();
@@ -62,7 +79,12 @@ namespace SystemTickets.Formularios.Catalogos
 
         private void CargarPantallas()
         {
-            
+            CLS_CatPantallas sel = new CLS_CatPantallas();
+            sel.MtdSeleccionarPantallas();
+            if(sel.Exito)
+            {
+                dtgPantallas.DataSource = sel.Datos;
+            }
         }
     }
 }

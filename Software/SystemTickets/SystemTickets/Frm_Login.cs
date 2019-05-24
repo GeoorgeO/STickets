@@ -58,8 +58,8 @@ namespace SystemTickets
                             
                             if (vIdActivo == 1)
                             {
-                                frmP.UsuariosLogin = txtUser.Text;
-                                frmP.UsuariosClase = Convert.ToChar(sLogin.Datos.Rows[0][1]);
+                                frmP.c_codigo_usu = txtUser.Text;
+                                frmP.c_codigo_per = sLogin.Datos.Rows[0][1].ToString();
                                 frmP.Show();
                                 this.Hide();
                             }

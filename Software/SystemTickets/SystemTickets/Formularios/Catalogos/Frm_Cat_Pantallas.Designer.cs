@@ -1,4 +1,4 @@
-﻿namespace SystemTickets.Formularios.Catalogos
+﻿namespace SystemTickets
 {
     partial class Frm_Cat_Pantallas
     {
