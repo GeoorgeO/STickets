@@ -38,34 +38,41 @@ namespace SystemTickets
                 if (txtUser.Text != string.Empty && txtPass.Text != string.Empty)
                 {
                     Crypto claseencripta = new Crypto();
-                    SEG_Login sLogin = new SEG_Login() { c_codigo_usu = txtUser.Text, v_passwo_usu = claseencripta.Encriptar(txtPass.Text) };
+                    SEG_Login sLogin = new SEG_Login() { v_login = txtUser.Text};
                     sLogin.MtdSeleccionarUsuarioLogin();
                     if (sLogin.Exito)
                     {
                         if (sLogin.Datos.Rows.Count > 0)
                         {
-                            vIdUsuario = sLogin.Datos.Rows[0][0].ToString();
-                            if (sLogin.Datos.Rows[0][2].ToString() == "True")
+                            if (sLogin.Datos.Rows[0]["v_password"].ToString()==claseencripta.Encriptar(txtPass.Text))
                             {
-                                vIdActivo = 1;
+                                vIdUsuario = sLogin.Datos.Rows[0]["v_login"].ToString();
+                                if (sLogin.Datos.Rows[0]["c_codigo_act"].ToString() == "True")
+                                {
+                                    vIdActivo = 1;
+                                }
+                                else
+                                {
+                                    vIdActivo = 0;
+                                }
+                                Frm_Principal frmP = new Frm_Principal();
+                                MSRegistro RegIn = new MSRegistro();
+
+                                if (vIdActivo == 1)
+                                {
+                                    frmP.c_codigo_usu = txtUser.Text;
+                                    frmP.c_codigo_per = sLogin.Datos.Rows[0]["c_codigo_per"].ToString();
+                                    frmP.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    XtraMessageBox.Show("Este usuario esta inactivo en el sistema");
+                                }
                             }
                             else
                             {
-                                vIdActivo = 0;
-                            }
-                            Frm_Principal frmP = new Frm_Principal();
-                            MSRegistro RegIn = new MSRegistro();
-                            
-                            if (vIdActivo == 1)
-                            {
-                                frmP.c_codigo_usu = txtUser.Text;
-                                frmP.c_codigo_per = sLogin.Datos.Rows[0][1].ToString();
-                                frmP.Show();
-                                this.Hide();
-                            }
-                            else
-                            {
-                                XtraMessageBox.Show("Este usuario esta inactivo en el sistema");
+                                XtraMessageBox.Show("Usuario o Contraseña Incorrectos");
                             }
                         }
                         else

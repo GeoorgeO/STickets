@@ -12,7 +12,7 @@ namespace CapaDeDatos
 {
     class MSRegistro
     {
-        const string NombreProyecto = "BSC-Reportes";
+        const string NombreProyecto = "STickets";
         public string GetSetting(string section, string key, string sDefault)
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey(@"Software\" + NombreProyecto + "\\" + section);

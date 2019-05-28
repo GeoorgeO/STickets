@@ -14,7 +14,7 @@ namespace CapaDeDatos
     
     public class ConexionSQL
     {
-        const string NombreProyecto = "BSC-Reportes";
+        const string NombreProyecto = "STickets";
         static public string LeerConexion()
         {
             string StrConexion = string.Empty;

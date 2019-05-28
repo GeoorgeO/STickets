@@ -16,7 +16,7 @@ namespace CapaDeDatos
              * debe ser utilizada para descifrar 
              * los datos que son cifrados con esta clave.
              * pueden ser los caracteres que uno desee*/
-            key = "BSC-Reportes";
+            key = "STickets";
         }
         public string Encriptar(string texto)
         {
