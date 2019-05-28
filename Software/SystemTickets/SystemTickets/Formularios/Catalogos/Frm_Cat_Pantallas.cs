@@ -73,8 +73,9 @@ namespace SystemTickets
                 foreach (int i in this.dtgValPantallas.GetSelectedRows())
                 {
                     DataRow row = this.dtgValPantallas.GetDataRow(i);
-                    txtCodigo.Text = row["c_codigo_pam"].ToString();
+                    txtCodigo.Text = row["c_codigo_pan"].ToString();
                     txtNombre.Text = row["v_nombre_pan"].ToString();
+                    isEdit = true;
                 }
             }
             catch (Exception ex)
@@ -86,6 +87,7 @@ namespace SystemTickets
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LimpiarCampos();
+            CargarPantallas();
         }
 
         private void LimpiarCampos()
@@ -95,6 +97,7 @@ namespace SystemTickets
             dtgPantallas.DataSource = null;
             MakeTablaPantallas();
             txtNombre.Focus();
+            isEdit = false;
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -125,6 +128,8 @@ namespace SystemTickets
             {
                 dtgPantallas.DataSource = ins.Datos;
                 XtraMessageBox.Show("Se ha Insertado en registro con exito");
+                LimpiarCampos();
+                CargarPantallas();
             }
             else
             {
@@ -142,6 +147,8 @@ namespace SystemTickets
             {
                 dtgPantallas.DataSource = ins.Datos;
                 XtraMessageBox.Show("Se ha Insertado en registro con exito");
+                LimpiarCampos();
+                CargarPantallas();
             }
             else
             {
@@ -169,6 +176,7 @@ namespace SystemTickets
             ins.MtdEliminarPantalla();
             if (ins.Exito)
             {
+                LimpiarCampos();
                 CargarPantallas();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
             }
