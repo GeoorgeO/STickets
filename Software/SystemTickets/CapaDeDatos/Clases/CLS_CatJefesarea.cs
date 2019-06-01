@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaDeDatos.Clases
+namespace CapaDeDatos
 {
    public class CLS_CatJefesarea: ConexionBase
     {

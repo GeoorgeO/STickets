@@ -13,7 +13,7 @@ go
 CREATE PROCEDURE STic_CatJefesarea_Update
 	@c_codigo_jef	char(5),
 	@v_nombre_jef	varchar(100),
-	@v_correoeletronico varchar (100)
+	@v_correoelectronico varchar (100)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -22,7 +22,7 @@ BEGIN
 
     -- Insert statements for procedure here
 	UPDATE       cat_jefesarea
-	SET               v_nombre_jef = @v_nombre_jef,v_correoelectronico = @v_correoeletronico
+	SET               v_nombre_jef = @v_nombre_jef,v_correoelectronico = @v_correoelectronico
 	WHERE        (c_codigo_jef = @c_codigo_jef)
 
 	SELECT        c_codigo_jef, v_nombre_jef, v_correoelectronico
