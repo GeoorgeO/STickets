@@ -47,5 +47,14 @@ namespace SystemTickets
             Frm_Cat_Botones.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Botones.DefInstance.Show();
         }
+
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Cat_Departamentos.DefInstance.MdiParent = this;
+            Frm_Cat_Departamentos.DefInstance.c_codigo_pan = "0005";
+            Frm_Cat_Departamentos.DefInstance.c_codigo_usu = c_codigo_usu;
+            Frm_Cat_Departamentos.DefInstance.c_codigo_per = c_codigo_per;
+            Frm_Cat_Departamentos.DefInstance.Show();
+        }
     }
 }

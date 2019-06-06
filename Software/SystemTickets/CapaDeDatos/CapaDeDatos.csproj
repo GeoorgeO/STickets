@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\CLS_CatBotones.cs" />
+    <Compile Include="Clases\CLS_CatDepartamentos.cs" />
     <Compile Include="Clases\CLS_CatJefesarea.cs" />
     <Compile Include="Clases\CLS_CatPantallas.cs" />
     <Compile Include="Class1.cs" />

@@ -196,3 +196,10 @@ begin
 
 ALTER TABLE cat_Perfil_Pantallas DROP FK_cat_Perfil_Pantallas_cat_Perfiles
 end
+
+if exists  ( SELECT fk.name AS FK FROM sys.foreign_keys AS fk INNER JOIN sys.foreign_key_columns AS fc ON fk.OBJECT_ID = fc.constraint_object_id 
+where fk.name='FK_cat_Departamentos_cat_jefesarea' )
+begin
+
+ALTER TABLE cat_Departamentos DROP FK_cat_Departamentos_cat_jefesarea
+end

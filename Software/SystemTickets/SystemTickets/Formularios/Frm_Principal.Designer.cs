@@ -101,6 +101,7 @@
             this.barButtonItem5.Caption = "Departamentos";
             this.barButtonItem5.Id = 5;
             this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
             // barButtonItem6
             // 

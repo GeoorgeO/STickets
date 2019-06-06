@@ -9,6 +9,7 @@ go
 CREATE TABLE [dbo].[cat_Departamentos](
 	[c_codigo_dep] [char](4) NOT NULL,
 	[v_nombre_dep] [varchar](200) NULL,
+	[c_codigo_jef] [char](5) NULL
  CONSTRAINT [PK_cat_Departamentos] PRIMARY KEY CLUSTERED 
 (
 	[c_codigo_dep] ASC
