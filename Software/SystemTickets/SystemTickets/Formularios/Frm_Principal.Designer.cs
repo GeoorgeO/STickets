@@ -108,6 +108,7 @@
             this.barButtonItem6.Caption = "Correo E.";
             this.barButtonItem6.Id = 6;
             this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // ribbonPage1
             // 

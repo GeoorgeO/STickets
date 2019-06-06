@@ -1,4 +1,4 @@
-﻿namespace SystemTickets.Formularios.Catalogos
+﻿namespace SystemTickets
 {
     partial class Frm_Cat_Correos
     {
@@ -43,33 +43,35 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtRemitente = new DevExpress.XtraEditors.TextEdit();
+            this.cbeCifrado = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtPuerto = new DevExpress.XtraEditors.TextEdit();
+            this.txtServerE = new DevExpress.XtraEditors.TextEdit();
+            this.txtServerS = new DevExpress.XtraEditors.TextEdit();
+            this.txtContrasenia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtCorreo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemitente.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeCifrado.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPuerto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerS.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContrasenia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -121,6 +123,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnSalir
             // 
@@ -129,6 +132,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -198,18 +202,18 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.textEdit1);
-            this.groupControl1.Controls.Add(this.comboBoxEdit1);
-            this.groupControl1.Controls.Add(this.textEdit6);
-            this.groupControl1.Controls.Add(this.textEdit5);
-            this.groupControl1.Controls.Add(this.textEdit4);
-            this.groupControl1.Controls.Add(this.textEdit3);
+            this.groupControl1.Controls.Add(this.txtRemitente);
+            this.groupControl1.Controls.Add(this.cbeCifrado);
+            this.groupControl1.Controls.Add(this.txtPuerto);
+            this.groupControl1.Controls.Add(this.txtServerE);
+            this.groupControl1.Controls.Add(this.txtServerS);
+            this.groupControl1.Controls.Add(this.txtContrasenia);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.textEdit2);
+            this.groupControl1.Controls.Add(this.txtCorreo);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -220,6 +224,97 @@
             this.groupControl1.Text = "Configuracion Correo";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
+            // txtRemitente
+            // 
+            this.txtRemitente.Location = new System.Drawing.Point(128, 36);
+            this.txtRemitente.MenuManager = this.barManager1;
+            this.txtRemitente.Name = "txtRemitente";
+            this.txtRemitente.Size = new System.Drawing.Size(278, 20);
+            this.txtRemitente.TabIndex = 16;
+            // 
+            // cbeCifrado
+            // 
+            this.cbeCifrado.Location = new System.Drawing.Point(128, 198);
+            this.cbeCifrado.MenuManager = this.barManager1;
+            this.cbeCifrado.Name = "cbeCifrado";
+            this.cbeCifrado.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbeCifrado.Properties.Items.AddRange(new object[] {
+            "Si",
+            "No"});
+            this.cbeCifrado.Size = new System.Drawing.Size(70, 20);
+            this.cbeCifrado.TabIndex = 15;
+            // 
+            // txtPuerto
+            // 
+            this.txtPuerto.Location = new System.Drawing.Point(128, 228);
+            this.txtPuerto.MenuManager = this.barManager1;
+            this.txtPuerto.Name = "txtPuerto";
+            this.txtPuerto.Size = new System.Drawing.Size(70, 20);
+            this.txtPuerto.TabIndex = 14;
+            // 
+            // txtServerE
+            // 
+            this.txtServerE.Location = new System.Drawing.Point(128, 166);
+            this.txtServerE.MenuManager = this.barManager1;
+            this.txtServerE.Name = "txtServerE";
+            this.txtServerE.Size = new System.Drawing.Size(278, 20);
+            this.txtServerE.TabIndex = 13;
+            // 
+            // txtServerS
+            // 
+            this.txtServerS.Location = new System.Drawing.Point(128, 133);
+            this.txtServerS.MenuManager = this.barManager1;
+            this.txtServerS.Name = "txtServerS";
+            this.txtServerS.Size = new System.Drawing.Size(278, 20);
+            this.txtServerS.TabIndex = 12;
+            // 
+            // txtContrasenia
+            // 
+            this.txtContrasenia.Location = new System.Drawing.Point(128, 103);
+            this.txtContrasenia.MenuManager = this.barManager1;
+            this.txtContrasenia.Name = "txtContrasenia";
+            this.txtContrasenia.Properties.UseSystemPasswordChar = true;
+            this.txtContrasenia.Size = new System.Drawing.Size(129, 20);
+            this.txtContrasenia.TabIndex = 11;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(44, 232);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(63, 13);
+            this.labelControl7.TabIndex = 10;
+            this.labelControl7.Text = "Puerto Salida";
+            this.labelControl7.UseMnemonic = false;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(52, 202);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(55, 13);
+            this.labelControl6.TabIndex = 9;
+            this.labelControl6.Text = "Cifrado SSL";
+            this.labelControl6.UseMnemonic = false;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(26, 170);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(81, 13);
+            this.labelControl5.TabIndex = 8;
+            this.labelControl5.Text = "Servidor Entrada";
+            this.labelControl5.UseMnemonic = false;
+            this.labelControl5.Click += new System.EventHandler(this.labelControl5_Click);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(36, 137);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(71, 13);
+            this.labelControl4.TabIndex = 7;
+            this.labelControl4.Text = "Servidor Salida";
+            this.labelControl4.UseMnemonic = false;
+            // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(51, 107);
@@ -229,13 +324,13 @@
             this.labelControl3.Text = "Contraseña";
             this.labelControl3.UseMnemonic = false;
             // 
-            // textEdit2
+            // txtCorreo
             // 
-            this.textEdit2.Location = new System.Drawing.Point(128, 68);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(278, 20);
-            this.textEdit2.TabIndex = 3;
+            this.txtCorreo.Location = new System.Drawing.Point(128, 68);
+            this.txtCorreo.MenuManager = this.barManager1;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(278, 20);
+            this.txtCorreo.TabIndex = 3;
             // 
             // labelControl2
             // 
@@ -253,96 +348,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Correo Remitente";
             // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(36, 137);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(71, 13);
-            this.labelControl4.TabIndex = 7;
-            this.labelControl4.Text = "Servidor Salida";
-            this.labelControl4.UseMnemonic = false;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(26, 170);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(81, 13);
-            this.labelControl5.TabIndex = 8;
-            this.labelControl5.Text = "Servidor Entrada";
-            this.labelControl5.UseMnemonic = false;
-            this.labelControl5.Click += new System.EventHandler(this.labelControl5_Click);
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(52, 202);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(55, 13);
-            this.labelControl6.TabIndex = 9;
-            this.labelControl6.Text = "Cifrado SSL";
-            this.labelControl6.UseMnemonic = false;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(44, 232);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(63, 13);
-            this.labelControl7.TabIndex = 10;
-            this.labelControl7.Text = "Puerto Salida";
-            this.labelControl7.UseMnemonic = false;
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(128, 103);
-            this.textEdit3.MenuManager = this.barManager1;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(129, 20);
-            this.textEdit3.TabIndex = 11;
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(128, 133);
-            this.textEdit4.MenuManager = this.barManager1;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(278, 20);
-            this.textEdit4.TabIndex = 12;
-            // 
-            // textEdit5
-            // 
-            this.textEdit5.Location = new System.Drawing.Point(128, 166);
-            this.textEdit5.MenuManager = this.barManager1;
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(278, 20);
-            this.textEdit5.TabIndex = 13;
-            // 
-            // textEdit6
-            // 
-            this.textEdit6.Location = new System.Drawing.Point(128, 228);
-            this.textEdit6.MenuManager = this.barManager1;
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(70, 20);
-            this.textEdit6.TabIndex = 14;
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(128, 198);
-            this.comboBoxEdit1.MenuManager = this.barManager1;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
-            "Si",
-            "No"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(70, 20);
-            this.comboBoxEdit1.TabIndex = 15;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(128, 36);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(278, 20);
-            this.textEdit1.TabIndex = 16;
-            // 
             // Frm_Cat_Correos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,6 +360,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Cat_Correos";
             this.Text = "Frm_Cat_Correos";
+            this.Load += new System.EventHandler(this.Frm_Cat_Correos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -362,13 +368,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRemitente.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbeCifrado.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPuerto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtServerS.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtContrasenia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCorreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,18 +397,19 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtCorreo;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.ComboBoxEdit cbeCifrado;
+        private DevExpress.XtraEditors.TextEdit txtPuerto;
+        private DevExpress.XtraEditors.TextEdit txtServerE;
+        private DevExpress.XtraEditors.TextEdit txtServerS;
+        private DevExpress.XtraEditors.TextEdit txtContrasenia;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtRemitente;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }
