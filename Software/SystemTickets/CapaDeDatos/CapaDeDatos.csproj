@@ -46,6 +46,7 @@
     <Compile Include="Clases\CLS_CatDepartamentos.cs" />
     <Compile Include="Clases\CLS_CatJefesarea.cs" />
     <Compile Include="Clases\CLS_CatPantallas.cs" />
+    <Compile Include="Clases\CLS_CatUsuarios.cs" />
     <Compile Include="Clases\CLS_ConfCorreos.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion\CLS_AppConfig.cs" />

@@ -65,5 +65,14 @@ namespace SystemTickets
             Frm_Cat_Correos.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Correos.DefInstance.Show();
         }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Cat_Usuarios.DefInstance.MdiParent = this;
+            Frm_Cat_Usuarios.DefInstance.c_codigo_pan = "0007";
+            Frm_Cat_Usuarios.DefInstance.c_codigo_usu = c_codigo_usu;
+            Frm_Cat_Usuarios.DefInstance.c_codigo_per = c_codigo_per;
+            Frm_Cat_Usuarios.DefInstance.Show();
+        }
     }
 }
