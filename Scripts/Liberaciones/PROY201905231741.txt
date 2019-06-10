@@ -53,3 +53,4 @@ Scripts\Procedimientos Almacenados\STic_CatDepartamentos_Insert.sql
 Scripts\Procedimientos Almacenados\STic_CatDepartamentos_Jefe_Select.sql
 Scripts\Procedimientos Almacenados\STic_CatDepartamentos_Select.sql
 Scripts\Procedimientos Almacenados\STic_CatDepartamentos_Update.sql
+Scripts\Procedimientos Almacenados\STic_ConfCorreos_Select.sql
