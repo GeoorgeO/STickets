@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnBotones = new DevExpress.XtraBars.BarButtonItem();
             this.btnPantalla = new DevExpress.XtraBars.BarButtonItem();
@@ -85,6 +86,8 @@
             // 
             this.btnBotones.Caption = "Botones";
             this.btnBotones.Id = 1;
+            this.btnBotones.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBotones.ImageOptions.Image")));
+            this.btnBotones.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBotones.ImageOptions.LargeImage")));
             this.btnBotones.Name = "btnBotones";
             this.btnBotones.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBotones_ItemClick);
             // 
@@ -92,6 +95,8 @@
             // 
             this.btnPantalla.Caption = "Pantallas";
             this.btnPantalla.Id = 2;
+            this.btnPantalla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPantalla.ImageOptions.Image")));
+            this.btnPantalla.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPantalla.ImageOptions.LargeImage")));
             this.btnPantalla.Name = "btnPantalla";
             this.btnPantalla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPantalla_ItemClick);
             // 
@@ -99,12 +104,16 @@
             // 
             this.btnPerfiles.Caption = "Perfiles";
             this.btnPerfiles.Id = 3;
+            this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.ImageOptions.Image")));
+            this.btnPerfiles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.ImageOptions.LargeImage")));
             this.btnPerfiles.Name = "btnPerfiles";
             // 
             // btnJefes
             // 
             this.btnJefes.Caption = "Jefes";
             this.btnJefes.Id = 4;
+            this.btnJefes.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnJefes.ImageOptions.Image")));
+            this.btnJefes.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnJefes.ImageOptions.LargeImage")));
             this.btnJefes.Name = "btnJefes";
             this.btnJefes.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnJefes_ItemClick);
             // 
@@ -112,6 +121,8 @@
             // 
             this.btnDepartamentos.Caption = "Departamentos";
             this.btnDepartamentos.Id = 5;
+            this.btnDepartamentos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartamentos.ImageOptions.Image")));
+            this.btnDepartamentos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDepartamentos.ImageOptions.LargeImage")));
             this.btnDepartamentos.Name = "btnDepartamentos";
             this.btnDepartamentos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDepartamentos_ItemClick);
             // 
@@ -119,6 +130,8 @@
             // 
             this.btnCorreos.Caption = "Correo E.";
             this.btnCorreos.Id = 6;
+            this.btnCorreos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCorreos.ImageOptions.Image")));
+            this.btnCorreos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCorreos.ImageOptions.LargeImage")));
             this.btnCorreos.Name = "btnCorreos";
             this.btnCorreos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
@@ -126,12 +139,16 @@
             // 
             this.btnActividades.Caption = "Actividades";
             this.btnActividades.Id = 7;
+            this.btnActividades.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnActividades.ImageOptions.Image")));
+            this.btnActividades.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnActividades.ImageOptions.LargeImage")));
             this.btnActividades.Name = "btnActividades";
             // 
             // btnUsuarios
             // 
             this.btnUsuarios.Caption = "Usuarios";
             this.btnUsuarios.Id = 8;
+            this.btnUsuarios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.ImageOptions.Image")));
+            this.btnUsuarios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUsuarios.ImageOptions.LargeImage")));
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUsuarios_ItemClick);
             // 
@@ -139,12 +156,16 @@
             // 
             this.btnDepartamentoActividad.Caption = "Departamento - Actividad";
             this.btnDepartamentoActividad.Id = 9;
+            this.btnDepartamentoActividad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartamentoActividad.ImageOptions.Image")));
+            this.btnDepartamentoActividad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDepartamentoActividad.ImageOptions.LargeImage")));
             this.btnDepartamentoActividad.Name = "btnDepartamentoActividad";
             // 
             // btnPantallaBoton
             // 
             this.btnPantallaBoton.Caption = "Pantalla - Boton";
             this.btnPantallaBoton.Id = 10;
+            this.btnPantallaBoton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPantallaBoton.ImageOptions.Image")));
+            this.btnPantallaBoton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPantallaBoton.ImageOptions.LargeImage")));
             this.btnPantallaBoton.Name = "btnPantallaBoton";
             this.btnPantallaBoton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
@@ -152,6 +173,8 @@
             // 
             this.btnPerfilPantallaBoton.Caption = "Perfil - [Pantalla - Boton]";
             this.btnPerfilPantallaBoton.Id = 11;
+            this.btnPerfilPantallaBoton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfilPantallaBoton.ImageOptions.Image")));
+            this.btnPerfilPantallaBoton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPerfilPantallaBoton.ImageOptions.LargeImage")));
             this.btnPerfilPantallaBoton.Name = "btnPerfilPantallaBoton";
             // 
             // ribbonPage1
