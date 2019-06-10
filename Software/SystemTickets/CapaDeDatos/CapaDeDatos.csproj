@@ -52,6 +52,7 @@
     <Compile Include="Clases\CLS_CatJefesarea.cs" />
     <Compile Include="Clases\CLS_CatPantallas.cs" />
     <Compile Include="Clases\CLS_CatUsuarios.cs" />
+    <Compile Include="Clases\CLS_CatUsuario_Departamento.cs" />
     <Compile Include="Clases\CLS_Correos.cs" />
     <Compile Include="Clases\CLS_Email.cs" />
     <Compile Include="Class1.cs" />
