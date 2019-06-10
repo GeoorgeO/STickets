@@ -107,6 +107,7 @@
             this.btnPerfiles.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.ImageOptions.Image")));
             this.btnPerfiles.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPerfiles.ImageOptions.LargeImage")));
             this.btnPerfiles.Name = "btnPerfiles";
+            this.btnPerfiles.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPerfiles_ItemClick);
             // 
             // btnJefes
             // 
