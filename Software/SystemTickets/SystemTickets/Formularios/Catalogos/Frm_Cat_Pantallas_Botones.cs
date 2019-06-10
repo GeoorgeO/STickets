@@ -103,7 +103,9 @@ namespace SystemTickets
 
         private bool ExisteRegistro()
         {
-            
+            Boolean Valor = false;
+
+            return Valor;
         }
     }
 }
