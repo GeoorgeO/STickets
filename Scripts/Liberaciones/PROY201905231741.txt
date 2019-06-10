@@ -55,3 +55,4 @@ Scripts\Procedimientos Almacenados\STic_CatDepartamentos_Select.sql
 Scripts\Procedimientos Almacenados\STic_CatDepartamentos_Update.sql
 Scripts\Procedimientos Almacenados\STic_ConfCorreos_Select.sql
 Scripts\Procedimientos Almacenados\STic_ConfCorreos_Insert.sql
+Scripts\Datos\Pantallas_Botones.sql
