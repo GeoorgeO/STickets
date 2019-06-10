@@ -33,6 +33,7 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnPruebaCorreo = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
@@ -57,7 +58,6 @@
             this.txtCorreo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -71,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtServerS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasenia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCorreo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -87,9 +86,10 @@
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.lblProveedor,
             this.btnGuardar,
+            this.btnPruebaCorreo,
             this.btnSalir});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 64;
+            this.barManager1.MaxItemId = 65;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -104,9 +104,11 @@
             this.bIconos.FloatSize = new System.Drawing.Size(1106, 535);
             this.bIconos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPruebaCorreo),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.bIconos.OptionsBar.AllowCollapse = true;
-            this.bIconos.OptionsBar.AllowQuickCustomization = false;
+            this.bIconos.OptionsBar.AllowDelete = true;
+            this.bIconos.OptionsBar.AllowRename = true;
             this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
             this.bIconos.OptionsBar.DisableClose = true;
             this.bIconos.OptionsBar.DisableCustomization = true;
@@ -124,6 +126,14 @@
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
+            // 
+            // btnPruebaCorreo
+            // 
+            this.btnPruebaCorreo.Caption = "Probar";
+            this.btnPruebaCorreo.Id = 64;
+            this.btnPruebaCorreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPruebaCorreo.ImageOptions.Image")));
+            this.btnPruebaCorreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPruebaCorreo.ImageOptions.LargeImage")));
+            this.btnPruebaCorreo.Name = "btnPruebaCorreo";
             // 
             // btnSalir
             // 
@@ -375,7 +385,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtServerS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasenia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCorreo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,6 +419,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txtRemitente;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraBars.BarLargeButtonItem btnPruebaCorreo;
     }
 }
