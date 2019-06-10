@@ -111,6 +111,45 @@ namespace SystemTickets
             gridControl1.DataSource = table;
         }
 
+        private void MakeTablaDep()
+        {
+            DataTable table = new DataTable("FirstTable");
+            DataColumn column = new DataColumn();
+            table.Reset();
+
+            // DataRow row;
+            column.DataType = typeof(string);
+            column.ColumnName = "c_codigo_usu";
+            column.AutoIncrement = false;
+            column.Caption = "Id";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "c_codigo_dep";
+            column.AutoIncrement = false;
+            column.Caption = "Cod. Dep.";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "v_nombre_dep";
+            column.AutoIncrement = false;
+            column.Caption = "Departamento";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            gcDep.DataSource = table;
+        }
+
         private void LimpiarCampos()
         {
             txtId.Text = string.Empty;
