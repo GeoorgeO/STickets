@@ -20,7 +20,14 @@ namespace SystemTickets
 
         public string c_codigo_usu { get;  set; }
         public string c_codigo_per { get;  set; }
-
+        private void btnBotones_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Cat_Botones.DefInstance.MdiParent = this;
+            Frm_Cat_Botones.DefInstance.c_codigo_pan = "0001";
+            Frm_Cat_Botones.DefInstance.c_codigo_usu = c_codigo_usu;
+            Frm_Cat_Botones.DefInstance.c_codigo_per = c_codigo_per;
+            Frm_Cat_Botones.DefInstance.Show();
+        }
         private void btnPantalla_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_Cat_Pantallas.DefInstance.MdiParent = this;
@@ -30,7 +37,7 @@ namespace SystemTickets
             Frm_Cat_Pantallas.DefInstance.Show();
         }
 
-        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnJefes_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_Cat_Jefes.DefInstance.MdiParent = this;
             Frm_Cat_Jefes.DefInstance.c_codigo_pan = "0004";
@@ -39,16 +46,9 @@ namespace SystemTickets
             Frm_Cat_Jefes.DefInstance.Show();
         }
 
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Frm_Cat_Botones.DefInstance.MdiParent = this;
-            Frm_Cat_Botones.DefInstance.c_codigo_pan = "0001";
-            Frm_Cat_Botones.DefInstance.c_codigo_usu = c_codigo_usu;
-            Frm_Cat_Botones.DefInstance.c_codigo_per = c_codigo_per;
-            Frm_Cat_Botones.DefInstance.Show();
-        }
+        
 
-        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnDepartamentos_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_Cat_Departamentos.DefInstance.MdiParent = this;
             Frm_Cat_Departamentos.DefInstance.c_codigo_pan = "0005";
@@ -66,13 +66,18 @@ namespace SystemTickets
             Frm_Cat_Correos.DefInstance.Show();
         }
 
-        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnUsuarios_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_Cat_Usuarios.DefInstance.MdiParent = this;
             Frm_Cat_Usuarios.DefInstance.c_codigo_pan = "0007";
             Frm_Cat_Usuarios.DefInstance.c_codigo_usu = c_codigo_usu;
             Frm_Cat_Usuarios.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Usuarios.DefInstance.Show();
+        }
+
+        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

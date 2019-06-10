@@ -9,9 +9,9 @@ end
 go
 
 CREATE TABLE [dbo].[cat_Pantalla_Botones](
+	[id_pantalla_boton] int not NULL,
 	[c_codigo_pan] [char](4) NULL,
-	[c_codigo_bot] [char](4) NULL,
-	[id_pantalla_boton] int not NULL
+	[c_codigo_bot] [char](4) NULL
 CONSTRAINT [PK_cat_Pantalla_Botones] PRIMARY KEY CLUSTERED 
 (
 	[id_pantalla_boton] ASC
