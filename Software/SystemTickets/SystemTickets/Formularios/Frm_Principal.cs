@@ -36,48 +36,49 @@ namespace SystemTickets
             Frm_Cat_Pantallas.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Pantallas.DefInstance.Show();
         }
-
+        private void btnUsuarios_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Cat_Usuarios.DefInstance.MdiParent = this;
+            Frm_Cat_Usuarios.DefInstance.c_codigo_pan = "0004";
+            Frm_Cat_Usuarios.DefInstance.c_codigo_usu = c_codigo_usu;
+            Frm_Cat_Usuarios.DefInstance.c_codigo_per = c_codigo_per;
+            Frm_Cat_Usuarios.DefInstance.Show();
+        }
         private void btnJefes_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_Cat_Jefes.DefInstance.MdiParent = this;
-            Frm_Cat_Jefes.DefInstance.c_codigo_pan = "0004";
+            Frm_Cat_Jefes.DefInstance.c_codigo_pan = "0005";
             Frm_Cat_Jefes.DefInstance.c_codigo_usu = c_codigo_usu;
             Frm_Cat_Jefes.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Jefes.DefInstance.Show();
         }
-
-        
-
         private void btnDepartamentos_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_Cat_Departamentos.DefInstance.MdiParent = this;
-            Frm_Cat_Departamentos.DefInstance.c_codigo_pan = "0005";
+            Frm_Cat_Departamentos.DefInstance.c_codigo_pan = "0006";
             Frm_Cat_Departamentos.DefInstance.c_codigo_usu = c_codigo_usu;
             Frm_Cat_Departamentos.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Departamentos.DefInstance.Show();
         }
 
-        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnCorreos_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_Cat_Correos.DefInstance.MdiParent = this;
-            Frm_Cat_Correos.DefInstance.c_codigo_pan = "0006";
+            Frm_Cat_Correos.DefInstance.c_codigo_pan = "0011";
             Frm_Cat_Correos.DefInstance.c_codigo_usu = c_codigo_usu;
             Frm_Cat_Correos.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Correos.DefInstance.Show();
         }
 
-        private void btnUsuarios_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Frm_Cat_Usuarios.DefInstance.MdiParent = this;
-            Frm_Cat_Usuarios.DefInstance.c_codigo_pan = "0007";
-            Frm_Cat_Usuarios.DefInstance.c_codigo_usu = c_codigo_usu;
-            Frm_Cat_Usuarios.DefInstance.c_codigo_per = c_codigo_per;
-            Frm_Cat_Usuarios.DefInstance.Show();
-        }
 
-        private void barButtonItem9_ItemClick(object sender, ItemClickEventArgs e)
-        {
 
+        private void btnPantallaBoton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Cat_Pantallas_Botones.DefInstance.MdiParent = this;
+            Frm_Cat_Pantallas_Botones.DefInstance.c_codigo_pan = "0008";
+            Frm_Cat_Pantallas_Botones.DefInstance.c_codigo_usu = c_codigo_usu;
+            Frm_Cat_Pantallas_Botones.DefInstance.c_codigo_per = c_codigo_per;
+            Frm_Cat_Pantallas_Botones.DefInstance.Show();
         }
 
         private void btnPerfiles_ItemClick(object sender, ItemClickEventArgs e)

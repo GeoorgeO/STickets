@@ -134,7 +134,7 @@
             this.btnCorreos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCorreos.ImageOptions.Image")));
             this.btnCorreos.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCorreos.ImageOptions.LargeImage")));
             this.btnCorreos.Name = "btnCorreos";
-            this.btnCorreos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+            this.btnCorreos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCorreos_ItemClick);
             // 
             // btnActividades
             // 
@@ -168,7 +168,7 @@
             this.btnPantallaBoton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPantallaBoton.ImageOptions.Image")));
             this.btnPantallaBoton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPantallaBoton.ImageOptions.LargeImage")));
             this.btnPantallaBoton.Name = "btnPantallaBoton";
-            this.btnPantallaBoton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
+            this.btnPantallaBoton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPantallaBoton_ItemClick);
             // 
             // btnPerfilPantallaBoton
             // 
@@ -254,7 +254,7 @@
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Principal";
+            this.Text = "Sistema Tickets";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
