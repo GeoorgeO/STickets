@@ -113,7 +113,7 @@ namespace SystemTickets
 
         private void MakeTablaDep()
         {
-            DataTable table = new DataTable("FirstTable");
+            DataTable table = new DataTable("Table2");
             DataColumn column = new DataColumn();
             table.Reset();
 
@@ -164,6 +164,15 @@ namespace SystemTickets
             MakeTablaPantallas();
             txtNombre.Focus();
             isEdit = false;
+
+            gcDep.DataSource = null;
+            MakeTablaDep();
+        }
+
+        private void LimpiarCamposDep()
+        {
+            gcDep.DataSource = null;
+            MakeTablaDep();
         }
 
         private void CargarPantallas()
@@ -176,14 +185,41 @@ namespace SystemTickets
             }
         }
 
+        private void CargarDep()
+        {
+            CLS_CatUsuario_Departamento sel = new CLS_CatUsuario_Departamento();
+            sel.MtdSeleccionarUsuario_Departamento_Departamentos();
+            if (sel.Exito)
+            {
+                
+                
+                lueDep.Properties.DisplayMember = "v_nombre_dep";
+                lueDep.Properties.ValueMember = "c_codigo_dep";
+                lueDep.EditValue = null;
+                lueDep.Properties.DataSource = sel.Datos;
+            }
+        }
+
+        private void Cargarusuario_departamento()
+        {
+            CLS_CatUsuario_Departamento sel = new CLS_CatUsuario_Departamento();
+            sel.c_codigo_usu = txtId.Text;
+            sel.MtdSeleccionarUsuario_Departamento();
+            if (sel.Exito)
+            {
+                gcDep.DataSource = sel.Datos;
+            }
+        }
+
+
+
         private void InsertarRegistro()
         {
             CLS_CatUsuarios x = new CLS_CatUsuarios();
             x.v_login = txtUsuario.Text;
             x.v_nombres = txtNombre.Text;
             x.v_password = txtContrasena.Text;
-            x.d_fecha_alta = deFecha.Text;
-            x.d_fecha_udp = deFecha.Text;
+            
             x.v_correoelectronico = txtEmail.Text;
             x.v_apaterno = txtPaterno.Text;
             x.v_amaterno = txtMaterno.Text;
@@ -210,8 +246,8 @@ namespace SystemTickets
             ins.v_login = txtUsuario.Text;
             ins.v_nombres = txtNombre.Text;
             ins.v_password = txtContrasena.Text;
-            ins.d_fecha_alta = deFecha.Text;
-            ins.d_fecha_udp = deFecha.Text;
+            
+          
             ins.v_correoelectronico = txtEmail.Text;
             ins.v_apaterno = txtPaterno.Text;
             ins.v_amaterno = txtMaterno.Text;
@@ -246,7 +282,47 @@ namespace SystemTickets
             }
         }
 
-        
+        private void InsertarRegistroDep()
+        {
+            CLS_CatUsuario_Departamento x = new CLS_CatUsuario_Departamento();
+            x.c_codigo_usu = txtId.Text;
+            x.c_codigo_dep = lueDep.EditValue.ToString();
+
+
+            x.MtdInsertarUsuario_Departamento();
+            if (x.Exito)
+            {
+                gcDep.DataSource = x.Datos;
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCamposDep();
+                CargarDep();
+            }
+            else
+            {
+                XtraMessageBox.Show(x.Mensaje);
+            }
+        }
+
+        private void EliminarRegistroDep(string depa)
+        {
+            CLS_CatUsuario_Departamento ins = new CLS_CatUsuario_Departamento();
+            ins.c_codigo_usu = txtId.Text;
+            ins.c_codigo_dep = depa;
+
+            ins.MtdEliminarUsuario_Departamento();
+            if (ins.Exito)
+            {
+                LimpiarCamposDep();
+                Cargarusuario_departamento();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+            }
+            else
+            {
+                XtraMessageBox.Show(ins.Mensaje);
+            }
+        }
+
+
 
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -257,7 +333,9 @@ namespace SystemTickets
         private void Frm_Cat_Usuarios_Load(object sender, EventArgs e)
         {
             MakeTablaPantallas();
+            MakeTablaDep();
             CargarPantallas();
+            CargarDep();
         }
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -303,10 +381,19 @@ namespace SystemTickets
             this.Close();
         }
 
+      
+
+      
+
+    
+
+       
+
         private void gridControl1_Click(object sender, EventArgs e)
         {
             try
             {
+               
                 foreach (int i in this.gridView1.GetSelectedRows())
                 {
                     DataRow row = this.gridView1.GetDataRow(i);
@@ -316,17 +403,60 @@ namespace SystemTickets
                     txtPaterno.Text = row["v_apaterno"].ToString();
                     txtMaterno.Text = row["v_amaterno"].ToString();
                     txtContrasena.Text = row["v_password"].ToString();
-                    deFecha.Text = row["d_fecha_alta"].ToString();
-                    
+                   
                     txtEmail.Text = row["v_correoelectronico"].ToString();
-                    
+
 
                     isEdit = true;
+
+                    if (txtUsuario.Text.Length > 0)
+                    {
+                        Cargarusuario_departamento();
+                    }
                 }
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void sbAgregarDep_Click(object sender, EventArgs e)
+        {
+            if (lueDep.EditValue != null)
+            {
+                InsertarRegistroDep();
+                LimpiarCamposDep();
+                Cargarusuario_departamento();
+            }
+        }
+
+        private void sbAltaDep_Click(object sender, EventArgs e)
+        {
+            Frm_Cat_Departamentos departamentos = new Frm_Cat_Departamentos();
+            departamentos.c_codigo_pan = "0005";
+            departamentos.c_codigo_usu = c_codigo_usu;
+            departamentos.c_codigo_per = c_codigo_per;
+            departamentos.ShowDialog();
+        }
+
+        private void gcDep_DoubleClick(object sender, EventArgs e)
+        {
+            string depa;
+            foreach (int i in this.gridView2.GetSelectedRows())
+            {
+                DataRow row = this.gridView2.GetDataRow(i);
+                depa = row["c_codigo_dep"].ToString();
+
+                DialogResult dialogResult = MessageBox.Show("Deseas borrar el departamento seleccionado?", "Confirmación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    EliminarRegistroDep(depa);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
             }
         }
     }

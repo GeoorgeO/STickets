@@ -14,8 +14,8 @@ namespace CapaDeDatos
         public string v_apaterno { get; set; }
         public string v_amaterno { get; set; }
         public string v_password { get; set; }
-        public string d_fecha_alta { get; set; }
-        public string d_fecha_udp { get; set; }
+        
+       
         public string v_correoelectronico { get; set; }
         public int c_codigo_act { get; set; }
 
@@ -67,10 +67,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_amaterno");
                 _dato.CadenaTexto = v_password;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_password");
-                _dato.CadenaTexto = d_fecha_alta;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "d_fecha_alta");
-                _dato.CadenaTexto = d_fecha_udp;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "d_fecha_udp");
+                
+                
                 _dato.CadenaTexto = v_correoelectronico;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_correoelectronico");
                 _dato.Entero = c_codigo_act;
@@ -116,10 +114,7 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_amaterno");
                 _dato.CadenaTexto = v_password;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_password");
-                _dato.CadenaTexto = d_fecha_alta;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "d_fecha_alta");
-                _dato.CadenaTexto = d_fecha_udp;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "d_fecha_udp");
+               
                 _dato.CadenaTexto = v_correoelectronico;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_correoelectronico");
                 _dato.Entero = c_codigo_act;

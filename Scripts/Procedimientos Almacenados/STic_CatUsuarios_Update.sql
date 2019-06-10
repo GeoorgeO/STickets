@@ -28,9 +28,8 @@ CREATE PROCEDURE STic_CatUsuarios_Update
 	@v_nombres varchar(100), 
 	@v_apaterno varchar(50), 
 	@v_amaterno varchar(50), 
-	@v_password varchar(50), 
-	@d_fecha_alta datetime, 
-	@d_fecha_udp datetime, 
+	@v_password varchar(50),
+	
 	@v_correoelectronico varchar(100), 
 	@c_codigo_act bit
 AS
@@ -46,8 +45,7 @@ BEGIN
 				v_apaterno=@v_apaterno, 
 				v_amaterno=@v_amaterno, 
 				v_password=@v_password, 
-				d_fecha_alta=@d_fecha_alta, 
-				d_fecha_udp=@d_fecha_udp, 
+				d_fecha_udp=getdate(), 
 				v_correoelectronico=@v_correoelectronico, 
 				c_codigo_act=@c_codigo_act
 	WHERE        (c_codigo_usu = @c_codigo_usu)

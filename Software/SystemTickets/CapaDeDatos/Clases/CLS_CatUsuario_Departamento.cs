@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    class CLS_CatUsuario_Departamento : ConexionBase
+    public class CLS_CatUsuario_Departamento : ConexionBase
     {
         public string c_codigo_usu { get; set; }
         public string c_codigo_dep { get; set; }
@@ -41,6 +41,37 @@ namespace CapaDeDatos
             }
 
         }
+
+        public void MtdSeleccionarUsuario_Departamento_Departamentos()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexionR);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "STic_CatUsuario_Departamento_Departamentos_Select";
+               
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
         public void MtdInsertarUsuario_Departamento()
         {
             TipoDato _dato = new TipoDato();
