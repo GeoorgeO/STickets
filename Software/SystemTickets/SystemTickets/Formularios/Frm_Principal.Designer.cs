@@ -143,13 +143,13 @@
             // 
             // barButtonItem9
             // 
-            this.barButtonItem9.Caption = "Pantallas - Botones";
+            this.barButtonItem9.Caption = "Pantalla - Boton";
             this.barButtonItem9.Id = 10;
             this.barButtonItem9.Name = "barButtonItem9";
             // 
             // barButtonItem10
             // 
-            this.barButtonItem10.Caption = "Perfil - Pantalla Botones";
+            this.barButtonItem10.Caption = "Perfil - [Pantalla - Boton]";
             this.barButtonItem10.Id = 11;
             this.barButtonItem10.Name = "barButtonItem10";
             // 
@@ -168,6 +168,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnPantalla);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Seguridad";
             // 
@@ -181,7 +182,6 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Actividades";
             // 
