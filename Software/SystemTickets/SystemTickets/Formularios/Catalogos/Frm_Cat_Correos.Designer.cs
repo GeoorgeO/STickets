@@ -134,6 +134,7 @@
             this.btnPruebaCorreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPruebaCorreo.ImageOptions.Image")));
             this.btnPruebaCorreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPruebaCorreo.ImageOptions.LargeImage")));
             this.btnPruebaCorreo.Name = "btnPruebaCorreo";
+            this.btnPruebaCorreo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPruebaCorreo_ItemClick);
             // 
             // btnSalir
             // 
@@ -232,7 +233,6 @@
             this.groupControl1.Size = new System.Drawing.Size(598, 376);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Configuracion Correo";
-            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // txtRemitente
             // 
@@ -240,7 +240,7 @@
             this.txtRemitente.MenuManager = this.barManager1;
             this.txtRemitente.Name = "txtRemitente";
             this.txtRemitente.Size = new System.Drawing.Size(278, 20);
-            this.txtRemitente.TabIndex = 16;
+            this.txtRemitente.TabIndex = 0;
             // 
             // cbeCifrado
             // 
@@ -253,7 +253,7 @@
             "Si",
             "No"});
             this.cbeCifrado.Size = new System.Drawing.Size(70, 20);
-            this.cbeCifrado.TabIndex = 15;
+            this.cbeCifrado.TabIndex = 5;
             // 
             // txtPuerto
             // 
@@ -261,7 +261,7 @@
             this.txtPuerto.MenuManager = this.barManager1;
             this.txtPuerto.Name = "txtPuerto";
             this.txtPuerto.Size = new System.Drawing.Size(70, 20);
-            this.txtPuerto.TabIndex = 14;
+            this.txtPuerto.TabIndex = 6;
             // 
             // txtServerE
             // 
@@ -269,7 +269,7 @@
             this.txtServerE.MenuManager = this.barManager1;
             this.txtServerE.Name = "txtServerE";
             this.txtServerE.Size = new System.Drawing.Size(278, 20);
-            this.txtServerE.TabIndex = 13;
+            this.txtServerE.TabIndex = 4;
             // 
             // txtServerS
             // 
@@ -277,7 +277,7 @@
             this.txtServerS.MenuManager = this.barManager1;
             this.txtServerS.Name = "txtServerS";
             this.txtServerS.Size = new System.Drawing.Size(278, 20);
-            this.txtServerS.TabIndex = 12;
+            this.txtServerS.TabIndex = 3;
             // 
             // txtContrasenia
             // 
@@ -286,7 +286,7 @@
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Properties.UseSystemPasswordChar = true;
             this.txtContrasenia.Size = new System.Drawing.Size(129, 20);
-            this.txtContrasenia.TabIndex = 11;
+            this.txtContrasenia.TabIndex = 2;
             // 
             // labelControl7
             // 
@@ -314,7 +314,6 @@
             this.labelControl5.TabIndex = 8;
             this.labelControl5.Text = "Servidor Entrada";
             this.labelControl5.UseMnemonic = false;
-            this.labelControl5.Click += new System.EventHandler(this.labelControl5_Click);
             // 
             // labelControl4
             // 
@@ -340,7 +339,7 @@
             this.txtCorreo.MenuManager = this.barManager1;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(278, 20);
-            this.txtCorreo.TabIndex = 3;
+            this.txtCorreo.TabIndex = 1;
             // 
             // labelControl2
             // 

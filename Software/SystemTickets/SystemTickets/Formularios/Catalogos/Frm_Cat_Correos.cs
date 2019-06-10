@@ -42,19 +42,19 @@ namespace SystemTickets
 
         private void CargarPantallas()
         {
-            CLS_ConfCorreos sel = new CLS_ConfCorreos();
-            sel.MtdSeleccionarCorreos();
+            CLS_Correos sel = new CLS_Correos();
+            sel.MtdSeleccionar();
             if (sel.Exito)
             {
                 
                 for (int i = 0; i < sel.Datos.Rows.Count; i++)
                 {
-                    txtRemitente.Text = sel.Datos.Rows[i][0].ToString();
-                    txtCorreo.Text = sel.Datos.Rows[i][1].ToString();
-                    txtContrasenia.Text = sel.Datos.Rows[i][2].ToString();
-                    txtServerS.Text = sel.Datos.Rows[i][3].ToString();
-                    txtServerE.Text= sel.Datos.Rows[i][4].ToString();
-                    if (sel.Datos.Rows[i][5].ToString() == "True")
+                    txtRemitente.Text = sel.Datos.Rows[i]["v_correoremitente"].ToString();
+                    txtCorreo.Text = sel.Datos.Rows[i]["v_correousuario"].ToString();
+                    txtContrasenia.Text = sel.Datos.Rows[i]["v_correocontrasenia"].ToString();
+                    txtServerS.Text = sel.Datos.Rows[i]["v_correoservidorsalida"].ToString();
+                    txtServerE.Text= sel.Datos.Rows[i]["v_correoservidorentrada"].ToString();
+                    if (sel.Datos.Rows[i]["b_correocifradoSSL"].ToString() == "True")
                     {
                         cbeCifrado.Text = "Si";
                         
@@ -64,22 +64,18 @@ namespace SystemTickets
                         cbeCifrado.Text = "No";
                         // cbeCifrado.Text = "No";
                     }
-                    
-                    txtPuerto.Text = sel.Datos.Rows[i][6].ToString();
+                    txtPuerto.Text = sel.Datos.Rows[i]["n_correopuertosalida"].ToString();
                 }
                 if (sel.Datos.Rows.Count == 0)
                 {
                     cbeCifrado.Text = "No";
                 }
-                
-
-
             }
         }
 
         private void InsertarRegistro()
         {
-            CLS_ConfCorreos x = new CLS_ConfCorreos();
+            CLS_Correos x = new CLS_Correos();
             x.v_correoremitente = txtRemitente.Text;
             x.v_correousuario = txtCorreo.Text;
             x.v_correocontrasenia = txtContrasenia.Text;
@@ -93,30 +89,18 @@ namespace SystemTickets
             {
                 x.b_correocifradoSSL = 0;
             }
-            
-            x.n_correopuertosalida = txtPuerto.Text;
-            x.MtdInsertarCorreos();
+
+            x.n_correopuertosalida = Convert.ToInt32(txtPuerto.Text);
+            x.MtdInsertar();
             if (x.Exito)
             {
                 XtraMessageBox.Show("Se ha Guardado el registro con exito");
-
             }
             else
             {
                 XtraMessageBox.Show(x.Mensaje);
             }
         }
-
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelControl5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Frm_Cat_Correos_Load(object sender, EventArgs e)
         {
             CargarPantallas();
@@ -136,7 +120,6 @@ namespace SystemTickets
                             {
                                 if (txtRemitente.Text != string.Empty)
                                 { 
-
                                     InsertarRegistro();
                                 }
                                 else
@@ -173,6 +156,30 @@ namespace SystemTickets
         private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPruebaCorreo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            XtraInputBoxArgs args = new XtraInputBoxArgs();
+            // set required Input Box options 
+            args.Caption = "Ingrese EMail Destino";
+            args.Prompt = "Direccion de Correo";
+            args.DefaultButtonIndex = 0;
+            //args.Showing += Args_Showing;
+            // initialize a DateEdit editor with custom settings 
+            TextEdit editor = new TextEdit();
+            args.Editor = editor;
+            // a default DateEdit value 
+            args.DefaultResponse = "Correo Destino";
+            // display an Input Box with the custom editor 
+            string result = string.Empty;
+            result = XtraInputBox.Show(args).ToString();
+            if (result != string.Empty)
+            {
+                CLS_Email Envio = new CLS_Email();
+                Envio.EmailDestino = result;
+                Envio.SendMailPrueba();
+            }
         }
     }
 }

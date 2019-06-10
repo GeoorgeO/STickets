@@ -31,9 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.XtraEditors.v17.2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,7 +52,8 @@
     <Compile Include="Clases\CLS_CatJefesarea.cs" />
     <Compile Include="Clases\CLS_CatPantallas.cs" />
     <Compile Include="Clases\CLS_CatUsuarios.cs" />
-    <Compile Include="Clases\CLS_ConfCorreos.cs" />
+    <Compile Include="Clases\CLS_Correos.cs" />
+    <Compile Include="Clases\CLS_Email.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion\CLS_AppConfig.cs" />
     <Compile Include="Conexion\Conexion.cs" />
