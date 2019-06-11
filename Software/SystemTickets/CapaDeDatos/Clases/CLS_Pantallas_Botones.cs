@@ -44,6 +44,36 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdSeleccionarPantallaBoton()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexionR);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "STic_CatPantallasBotones_Select";
+                _dato.CadenaTexto = c_codigo_pan;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_pan");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
         public void MtdInsertarPantallasBotones()
         {
             TipoDato _dato = new TipoDato();

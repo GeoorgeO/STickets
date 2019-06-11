@@ -90,9 +90,28 @@ namespace SystemTickets
         {
             if(cmbPantallas.EditValue!=null && cmbBotones.EditValue!=null)
             {
-                if(ExisteRegistro())
+                string vPantalla = cmbPantallas.Text;
+                string vBoton = cmbBotones.Text;
+                if (ExisteRegistro())
                 {
-
+                    CLS_Pantallas_Botones ins = new CLS_Pantallas_Botones();
+                    ins.c_codigo_pan = cmbPantallas.EditValue.ToString();
+                    ins.c_codigo_bot = cmbBotones.EditValue.ToString();
+                    ins.MtdInsertarPantallasBotones();
+                    
+                    if(ins.Exito)
+                    {
+                        XtraMessageBox.Show("El Registro se ha insertado Exitosamente");
+                        CargarGridBotones();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(ins.Mensaje);
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("La Pantalla "+ vPantalla + " ya tiene asignado el boton "+ vBoton);
                 }
             }
             else
@@ -103,9 +122,38 @@ namespace SystemTickets
 
         private bool ExisteRegistro()
         {
-            Boolean Valor = false;
-
+            Boolean Valor = true;
+            CLS_Pantallas_Botones sel = new CLS_Pantallas_Botones();
+            sel.c_codigo_pan = cmbPantallas.EditValue.ToString();
+            sel.c_codigo_bot = cmbBotones.EditValue.ToString();
+            sel.MtdSeleccionarPantallaBotonBuscar();
+            if(sel.Exito)
+            {
+                if(sel.Datos.Rows.Count>0)
+                {
+                    Valor = false;
+                }
+            }
             return Valor;
+        }
+
+        private void cmbPantallas_EditValueChanged(object sender, EventArgs e)
+        {
+            CargarGridBotones();
+        }
+
+        private void CargarGridBotones()
+        {
+            if (cmbPantallas.EditValue != null)
+            {
+                CLS_Pantallas_Botones sel = new CLS_Pantallas_Botones();
+                sel.c_codigo_pan = cmbPantallas.EditValue.ToString();
+                sel.MtdSeleccionarPantallaBoton();
+                if (sel.Exito)
+                {
+                    dtgBotones.DataSource = sel.Datos;
+                }
+            }
         }
     }
 }
