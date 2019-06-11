@@ -84,7 +84,7 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "STic_CatDepartamentos_Update";
+                _conexion.NombreProcedimiento = "STic_CatPantallasBotones_Update";
                 _dato.CadenaTexto = c_codigo_pan;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_pan");
                 _dato.CadenaTexto = c_codigo_bot;
@@ -110,7 +110,7 @@ namespace CapaDeDatos
             }
 
         }
-        public void MtdEliminarDepartamentos()
+        public void MtdEliminarPantallasBotones()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexionR);

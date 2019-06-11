@@ -18,20 +18,16 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-create PROCEDURE STic_CatPantallasBotones_Insert
-	@c_codigo_pan varchar(4),
-	@c_codigo_bot varchar(4)
+CREATE PROCEDURE STic_CatPantallasBotones_Delete
+	@id_pantalla_boton int
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
-	declare @id_pantalla_boton int
-	select @id_pantalla_boton=isnull(count(id_pantalla_boton),0)+1 from cat_Pantalla_Botones
     -- Insert statements for procedure here
-	INSERT INTO cat_Pantalla_Botones
-                         (id_pantalla_boton, c_codigo_pan, c_codigo_bot)
-	VALUES        (@id_pantalla_boton,@c_codigo_pan,@c_codigo_bot)
+	DELETE FROM cat_Pantalla_Botones
+	WHERE  (id_pantalla_boton = @id_pantalla_boton)
 END
 GO
