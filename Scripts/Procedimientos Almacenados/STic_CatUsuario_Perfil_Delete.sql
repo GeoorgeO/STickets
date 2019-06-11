@@ -19,11 +19,12 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatUsuario_Departamento_Perfiles_Select')
-DROP PROCEDURE STic_CatUsuario_Departamento_Perfiles_Select 
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatUsuario_Perfil_Delete')
+DROP PROCEDURE STic_CatUsuario_Perfil_Delete 
 go
-CREATE PROCEDURE STic_CatUsuario_Departamento_Perfiles_Select
-	
+CREATE PROCEDURE STic_CatUsuario_Perfil_Delete 
+	@c_codigo_usu	char(7),
+	@c_codigo_per char(4)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -31,7 +32,23 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	select c_codigo_per,v_nombre_per from cat_Perfiles
+	declare @Ejecutado bit
+		  
+BEGIN TRANSACTION ;  
+ BEGIN TRY  
+
+	DELETE FROM cat_Usuario_Perfil
+	WHERE  (c_codigo_usu = @c_codigo_usu and c_codigo_per=@c_codigo_per)
+
+	COMMIT ; 
+    set @Ejecutado=1
+END TRY  
+BEGIN CATCH  
+	rollback ;  
+	set @Ejecutado=0
+END CATCH  
+
+select @Ejecutado Exito
 
 END
 GO

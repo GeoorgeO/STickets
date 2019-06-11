@@ -54,6 +54,7 @@
     <Compile Include="Clases\CLS_CatPerfiles.cs" />
     <Compile Include="Clases\CLS_CatUsuarios.cs" />
     <Compile Include="Clases\CLS_CatUsuario_Departamento.cs" />
+    <Compile Include="Clases\CLS_CatUsuario_Perfil.cs" />
     <Compile Include="Clases\CLS_Correos.cs" />
     <Compile Include="Clases\CLS_Email.cs" />
     <Compile Include="Clases\CLS_Pantallas_Botones.cs" />

@@ -78,9 +78,39 @@ namespace SystemTickets
 
             column = new DataColumn();
             column.DataType = typeof(string);
+            column.ColumnName = "v_apaterno";
+            column.AutoIncrement = false;
+            column.Caption = "A. Paterno";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "v_amaterno";
+            column.AutoIncrement = false;
+            column.Caption = "A. Materno";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
             column.ColumnName = "d_fecha_alta";
             column.AutoIncrement = false;
-            column.Caption = "Fecha";
+            column.Caption = "F. Alta";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "d_fecha_udp";
+            column.AutoIncrement = false;
+            column.Caption = "F. Modificacion";
             column.ReadOnly = false;
             column.Unique = false;
 
@@ -150,6 +180,45 @@ namespace SystemTickets
             gcDep.DataSource = table;
         }
 
+        private void MakeTablaPer()
+        {
+            DataTable table = new DataTable("Table3");
+            DataColumn column = new DataColumn();
+            table.Reset();
+
+            // DataRow row;
+            column.DataType = typeof(string);
+            column.ColumnName = "c_codigo_per";
+            column.AutoIncrement = false;
+            column.Caption = "Id";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "c_codigo_usu";
+            column.AutoIncrement = false;
+            column.Caption = "Usuario";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
+            column.ColumnName = "v_nombre_per";
+            column.AutoIncrement = false;
+            column.Caption = "Perfil";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            gcPer.DataSource = table;
+        }
+
         private void LimpiarCampos()
         {
             txtId.Text = string.Empty;
@@ -167,12 +236,21 @@ namespace SystemTickets
 
             gcDep.DataSource = null;
             MakeTablaDep();
+
+            gcPer.DataSource = null;
+            MakeTablaPer();
         }
 
         private void LimpiarCamposDep()
         {
             gcDep.DataSource = null;
             MakeTablaDep();
+        }
+
+        private void LimpiarCamposPer()
+        {
+            gcPer.DataSource = null;
+            MakeTablaPer();
         }
 
         private void CargarPantallas()
@@ -200,6 +278,21 @@ namespace SystemTickets
             }
         }
 
+        private void CargarPer()
+        {
+            CLS_CatUsuario_Perfil sel = new CLS_CatUsuario_Perfil();
+            sel.MtdSeleccionarUsuario_Perfil_Perfiles();
+            if (sel.Exito)
+            {
+
+
+                luePer.Properties.DisplayMember = "v_nombre_per";
+                luePer.Properties.ValueMember = "c_codigo_per";
+                luePer.EditValue = null;
+                luePer.Properties.DataSource = sel.Datos;
+            }
+        }
+
         private void Cargarusuario_departamento()
         {
             CLS_CatUsuario_Departamento sel = new CLS_CatUsuario_Departamento();
@@ -211,7 +304,16 @@ namespace SystemTickets
             }
         }
 
-
+        private void Cargarusuario_perfil()
+        {
+            CLS_CatUsuario_Perfil sel = new CLS_CatUsuario_Perfil();
+            sel.c_codigo_usu = txtId.Text;
+            sel.MtdSeleccionarUsuario_Perfil();
+            if (sel.Exito)
+            {
+                gcPer.DataSource = sel.Datos;
+            }
+        }
 
         private void InsertarRegistro()
         {
@@ -272,9 +374,16 @@ namespace SystemTickets
             ins.MtdEliminarUsuarios();
             if (ins.Exito)
             {
-                LimpiarCampos();
-                CargarPantallas();
-                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                if (Convert.ToUInt16(ins.Datos.Rows[0][0]) == 1) {
+                    LimpiarCampos();
+                    CargarPantallas();
+                    XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                }
+                else
+                {
+                    XtraMessageBox.Show("No se puede eliminar, antes debe quitar departamento y perfil, y verificar que no tenga datos capturados o actividad, de lo contrario no es posible esta operación.");
+                }
+                
             }
             else
             {
@@ -303,6 +412,27 @@ namespace SystemTickets
             }
         }
 
+        private void InsertarRegistroPer()
+        {
+            CLS_CatUsuario_Perfil x = new CLS_CatUsuario_Perfil();
+            x.c_codigo_usu = txtId.Text;
+            x.c_codigo_per = luePer.EditValue.ToString();
+
+
+            x.MtdInsertarUsuario_Perfil();
+            if (x.Exito)
+            {
+                gcPer.DataSource = x.Datos;
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCamposPer();
+                CargarPer();
+            }
+            else
+            {
+                XtraMessageBox.Show(x.Mensaje);
+            }
+        }
+
         private void EliminarRegistroDep(string depa)
         {
             CLS_CatUsuario_Departamento ins = new CLS_CatUsuario_Departamento();
@@ -322,7 +452,24 @@ namespace SystemTickets
             }
         }
 
+        private void EliminarRegistroPer(string perfil)
+        {
+            CLS_CatUsuario_Perfil ins = new CLS_CatUsuario_Perfil();
+            ins.c_codigo_usu = txtId.Text;
+            ins.c_codigo_per = perfil;
 
+            ins.MtdEliminarUsuario_Perfil();
+            if (ins.Exito)
+            {
+                LimpiarCamposPer();
+                Cargarusuario_perfil();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+            }
+            else
+            {
+                XtraMessageBox.Show(ins.Mensaje);
+            }
+        }
 
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -334,8 +481,10 @@ namespace SystemTickets
         {
             MakeTablaPantallas();
             MakeTablaDep();
+            MakeTablaPer();
             CargarPantallas();
             CargarDep();
+            CargarPer();
         }
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -381,14 +530,6 @@ namespace SystemTickets
             this.Close();
         }
 
-      
-
-      
-
-    
-
-       
-
         private void gridControl1_Click(object sender, EventArgs e)
         {
             try
@@ -412,6 +553,7 @@ namespace SystemTickets
                     if (txtUsuario.Text.Length > 0)
                     {
                         Cargarusuario_departamento();
+                        Cargarusuario_perfil();
                     }
                 }
             }
@@ -434,7 +576,7 @@ namespace SystemTickets
         private void sbAltaDep_Click(object sender, EventArgs e)
         {
             Frm_Cat_Departamentos departamentos = new Frm_Cat_Departamentos();
-            departamentos.c_codigo_pan = "0005";
+            departamentos.c_codigo_pan = "0006";
             departamentos.c_codigo_usu = c_codigo_usu;
             departamentos.c_codigo_per = c_codigo_per;
             departamentos.ShowDialog();
@@ -452,6 +594,45 @@ namespace SystemTickets
                 if (dialogResult == DialogResult.Yes)
                 {
                     EliminarRegistroDep(depa);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+        }
+
+        private void sbAgregarPer_Click(object sender, EventArgs e)
+        {
+            if (luePer.EditValue != null)
+            {
+                InsertarRegistroPer();
+                LimpiarCamposPer();
+                Cargarusuario_perfil();
+            }
+        }
+
+        private void sbAltaPer_Click(object sender, EventArgs e)
+        {
+            Frm_Cat_Perfiles perfiles = new Frm_Cat_Perfiles();
+            perfiles.c_codigo_pan = "0003";
+            perfiles.c_codigo_usu = c_codigo_usu;
+            perfiles.c_codigo_per = c_codigo_per;
+            perfiles.ShowDialog();
+        }
+
+        private void gcPer_DoubleClick(object sender, EventArgs e)
+        {
+            string perfil;
+            foreach (int i in this.gridView3.GetSelectedRows())
+            {
+                DataRow row = this.gridView3.GetDataRow(i);
+                perfil = row["c_codigo_per"].ToString();
+
+                DialogResult dialogResult = MessageBox.Show("Deseas borrar el perfil seleccionado?", "Confirmación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    EliminarRegistroPer(perfil);
                 }
                 else if (dialogResult == DialogResult.No)
                 {
