@@ -40,6 +40,108 @@ namespace SystemTickets
             InitializeComponent();
         }
 
+        private void eliminaDepyPer()
+        {
+            CLS_CatUsuarios sel = new CLS_CatUsuarios();
+            sel.c_codigo_usu = txtId.Text;
+            sel.MtdEliminarDepyPerUsauario();
+            if (sel.Exito)
+            {
+                if (Convert.ToUInt16(sel.Datos.Rows[0][0]) == 1)
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+
+            }
+            else
+            {
+                XtraMessageBox.Show(sel.Mensaje);
+            }
+
+        }
+
+        private void selectMaxId()
+        {
+            CLS_CatUsuarios sel = new CLS_CatUsuarios();
+            sel.MtdSeleccionarMaxUsuarios();
+            if (sel.Exito)
+            {
+                txtId.Text = sel.Datos.Rows[0][0].ToString();
+            }
+        }
+
+
+        private void agregaIdaDepyPer()
+        {
+            int f = 0, xRow;
+            for (f = 0; f < gridView2.RowCount; f++)
+            {
+                xRow = gridView2.GetVisibleRowHandle(f);
+                gridView2.SetRowCellValue(xRow, "c_codigo_usu", txtId.Text);
+            }
+            for (f = 0; f < gridView3.RowCount; f++)
+            {
+                xRow = gridView3.GetVisibleRowHandle(f);
+                gridView3.SetRowCellValue(xRow, "c_codigo_usu", txtId.Text);
+            }
+        }
+
+        private void recorrerdep()
+        {
+            int f = 0,xRow;
+            for (f=0;f< gridView2.RowCount;f++)
+            {
+                xRow = gridView2.GetVisibleRowHandle(f);
+                
+                
+
+             
+                InsertarRegistroDep(gridView2.GetRowCellValue(xRow, "c_codigo_usu").ToString(), gridView2.GetRowCellValue(xRow, "c_codigo_dep").ToString());
+            }
+        }
+
+        private void recorrerper()
+        {
+            int f = 0, xRow;
+            for (f = 0; f < gridView3.RowCount; f++)
+            {
+                xRow = gridView3.GetVisibleRowHandle(f);
+
+
+
+
+                InsertarRegistroPer(gridView3.GetRowCellValue(xRow, "c_codigo_usu").ToString(), gridView3.GetRowCellValue(xRow, "c_codigo_per").ToString());
+            }
+        }
+
+        private void AgregaRenglonDep(string val1, string val2, string val3)
+        {
+            gridView2.AddNewRow();
+            int rowHandle = gridView2.GetRowHandle(gridView2.DataRowCount);
+            if (gridView2.IsNewItemRow(rowHandle))
+            {
+                gridView2.SetRowCellValue(rowHandle, gridView2.Columns[0], val1);
+                gridView2.SetRowCellValue(rowHandle, gridView2.Columns[1], val2);
+                gridView2.SetRowCellValue(rowHandle, gridView2.Columns[2], val3);
+            }
+        }
+
+        private void AgregaRenglonPer(string val1, string val2, string val3)
+        {
+            gridView3.AddNewRow();
+            int rowHandle = gridView3.GetRowHandle(gridView3.DataRowCount);
+            if (gridView3.IsNewItemRow(rowHandle))
+            {
+                gridView3.SetRowCellValue(rowHandle, gridView3.Columns[0], val1);
+                gridView3.SetRowCellValue(rowHandle, gridView3.Columns[1], val2);
+                gridView3.SetRowCellValue(rowHandle, gridView3.Columns[2], val3);
+            }
+        }
+
         private void MakeTablaPantallas()
         {
             DataTable table = new DataTable("FirstTable");
@@ -325,6 +427,7 @@ namespace SystemTickets
             x.v_correoelectronico = txtEmail.Text;
             x.v_apaterno = txtPaterno.Text;
             x.v_amaterno = txtMaterno.Text;
+            x.c_codigo_usu = txtId.Text;
             
             
             x.MtdInsertarUsuarios();
@@ -332,8 +435,8 @@ namespace SystemTickets
             {
                 gridControl1.DataSource = x.Datos;
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCampos();
-                CargarPantallas();
+                //LimpiarCampos();
+                //CargarPantallas();
             }
             else
             {
@@ -358,8 +461,7 @@ namespace SystemTickets
             {
                 gridControl1.DataSource = ins.Datos;
                 XtraMessageBox.Show("Se ha Actualizado el registro con exito");
-                LimpiarCampos();
-                CargarPantallas();
+                
             }
             else
             {
@@ -391,20 +493,41 @@ namespace SystemTickets
             }
         }
 
-        private void InsertarRegistroDep()
+        private void InsertarRegistroDep(string usu,string dep)
         {
             CLS_CatUsuario_Departamento x = new CLS_CatUsuario_Departamento();
-            x.c_codigo_usu = txtId.Text;
-            x.c_codigo_dep = lueDep.EditValue.ToString();
+            x.c_codigo_usu = usu;
+            x.c_codigo_dep = dep;
 
 
             x.MtdInsertarUsuario_Departamento();
             if (x.Exito)
             {
-                gcDep.DataSource = x.Datos;
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCamposDep();
-                CargarDep();
+                //gcDep.DataSource = x.Datos;
+                //XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                //LimpiarCamposDep();
+                //CargarDep();
+            }
+            else
+            {
+                XtraMessageBox.Show(x.Mensaje);
+            }
+        }
+
+        private void InsertarRegistroPer(string usu, string per)
+        {
+            CLS_CatUsuario_Perfil x = new CLS_CatUsuario_Perfil();
+            x.c_codigo_usu = usu;
+            x.c_codigo_per = per;
+
+
+            x.MtdInsertarUsuario_Perfil();
+            if (x.Exito)
+            {
+                //gcDep.DataSource = x.Datos;
+                //XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                //LimpiarCamposDep();
+                //CargarDep();
             }
             else
             {
@@ -485,12 +608,15 @@ namespace SystemTickets
             CargarPantallas();
             CargarDep();
             CargarPer();
+           
         }
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LimpiarCampos();
             CargarPantallas();
+            CargarDep();
+            CargarPer();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -499,12 +625,21 @@ namespace SystemTickets
             {
                 if (isEdit == false)
                 {
+                    selectMaxId();
+                    agregaIdaDepyPer();
                     InsertarRegistro();
                 }
                 else
                 {
                     ActualizarRegistro();
                 }
+
+                eliminaDepyPer();
+                recorrerdep();
+                recorrerper();
+
+                LimpiarCampos();
+                CargarPantallas();
             }
             else
             {
@@ -565,11 +700,13 @@ namespace SystemTickets
 
         private void sbAgregarDep_Click(object sender, EventArgs e)
         {
-            if (lueDep.EditValue != null)
+            if (lueDep.EditValue != null )
+            { 
+                AgregaRenglonDep("", lueDep.EditValue.ToString(), lueDep.Text);
+            }
+            else
             {
-                InsertarRegistroDep();
-                LimpiarCamposDep();
-                Cargarusuario_departamento();
+                XtraMessageBox.Show("Falta especificar un departamento.");
             }
         }
 
@@ -582,33 +719,15 @@ namespace SystemTickets
             departamentos.ShowDialog();
         }
 
-        private void gcDep_DoubleClick(object sender, EventArgs e)
-        {
-            string depa;
-            foreach (int i in this.gridView2.GetSelectedRows())
-            {
-                DataRow row = this.gridView2.GetDataRow(i);
-                depa = row["c_codigo_dep"].ToString();
-
-                DialogResult dialogResult = MessageBox.Show("Deseas borrar el departamento seleccionado?", "Confirmación", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    EliminarRegistroDep(depa);
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
-                }
-            }
-        }
-
         private void sbAgregarPer_Click(object sender, EventArgs e)
         {
             if (luePer.EditValue != null)
             {
-                InsertarRegistroPer();
-                LimpiarCamposPer();
-                Cargarusuario_perfil();
+                AgregaRenglonPer("", luePer.EditValue.ToString(), luePer.Text);
+            }
+            else
+            {
+                XtraMessageBox.Show("Falta especificar un departamento.");
             }
         }
 
@@ -633,6 +752,26 @@ namespace SystemTickets
                 if (dialogResult == DialogResult.Yes)
                 {
                     EliminarRegistroPer(perfil);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //do something else
+                }
+            }
+        }
+
+        private void gcDep_DoubleClick(object sender, EventArgs e)
+        {
+            string depa;
+            foreach (int i in this.gridView2.GetSelectedRows())
+            {
+                DataRow row = this.gridView2.GetDataRow(i);
+                depa = row["c_codigo_dep"].ToString();
+
+                DialogResult dialogResult = MessageBox.Show("Deseas borrar el departamento seleccionado?", "Confirmación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    EliminarRegistroDep(depa);
                 }
                 else if (dialogResult == DialogResult.No)
                 {

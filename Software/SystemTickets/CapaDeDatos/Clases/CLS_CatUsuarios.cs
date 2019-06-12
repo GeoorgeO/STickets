@@ -19,6 +19,35 @@ namespace CapaDeDatos
         public string v_correoelectronico { get; set; }
         public int c_codigo_act { get; set; }
 
+        public void MtdSeleccionarMaxUsuarios()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexionR);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "STic_CatUsuarios_SelectMax";
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
         public void MtdSeleccionarUsuarios()
         {
             TipoDato _dato = new TipoDato();
@@ -73,6 +102,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_correoelectronico");
                 _dato.Entero = c_codigo_act;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "c_codigo_act");
+                _dato.CadenaTexto = c_codigo_usu;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_usu");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -148,6 +179,37 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "STic_CatUsuarios_Delete";
+                _dato.CadenaTexto = c_codigo_usu;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_usu");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+        public void MtdEliminarDepyPerUsauario()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexionR);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "STic_CatUsuario_All_Departamento_Perfil_Delete";
                 _dato.CadenaTexto = c_codigo_usu;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_usu");
                 _conexion.EjecutarDataset();
