@@ -57,8 +57,8 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.gcPer = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sbAgregarPer = new DevExpress.XtraEditors.SimpleButton();
             this.sbAltaPer = new DevExpress.XtraEditors.SimpleButton();
@@ -315,16 +315,12 @@
             this.gridColumn10.Caption = "Usuario";
             this.gridColumn10.FieldName = "c_codigo_usu";
             this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 1;
             // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "Cod. Dep.";
             this.gridColumn11.FieldName = "c_codigo_dep";
             this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 2;
             // 
             // gridColumn12
             // 
@@ -407,17 +403,17 @@
             this.gridView3.OptionsBehavior.Editable = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "Id";
-            this.gridColumn13.FieldName = "c_codigo_per";
-            this.gridColumn13.Name = "gridColumn13";
-            // 
             // gridColumn14
             // 
             this.gridColumn14.Caption = "Usuario";
             this.gridColumn14.FieldName = "c_codigo_usu";
             this.gridColumn14.Name = "gridColumn14";
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "Id";
+            this.gridColumn13.FieldName = "c_codigo_per";
+            this.gridColumn13.Name = "gridColumn13";
             // 
             // gridColumn15
             // 
@@ -492,7 +488,7 @@
             this.txtEmail.MenuManager = this.barManager1;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(450, 20);
-            this.txtEmail.TabIndex = 17;
+            this.txtEmail.TabIndex = 8;
             // 
             // labelControl10
             // 
@@ -508,7 +504,7 @@
             this.txtMaterno.MenuManager = this.barManager1;
             this.txtMaterno.Name = "txtMaterno";
             this.txtMaterno.Size = new System.Drawing.Size(165, 20);
-            this.txtMaterno.TabIndex = 14;
+            this.txtMaterno.TabIndex = 7;
             // 
             // labelControl7
             // 
@@ -524,7 +520,7 @@
             this.txtPaterno.MenuManager = this.barManager1;
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.Size = new System.Drawing.Size(165, 20);
-            this.txtPaterno.TabIndex = 12;
+            this.txtPaterno.TabIndex = 6;
             // 
             // txtContrasena
             // 
@@ -533,7 +529,7 @@
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Properties.UseSystemPasswordChar = true;
             this.txtContrasena.Size = new System.Drawing.Size(165, 20);
-            this.txtContrasena.TabIndex = 11;
+            this.txtContrasena.TabIndex = 4;
             // 
             // labelControl6
             // 
@@ -557,7 +553,7 @@
             this.txtNombre.MenuManager = this.barManager1;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(165, 20);
-            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TabIndex = 5;
             // 
             // labelControl3
             // 
@@ -577,6 +573,7 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(77, 27);
             this.txtId.MenuManager = this.barManager1;
             this.txtId.Name = "txtId";

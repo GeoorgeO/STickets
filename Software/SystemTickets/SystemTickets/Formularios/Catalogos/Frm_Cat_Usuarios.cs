@@ -363,6 +363,7 @@ namespace SystemTickets
             {
                 gridControl1.DataSource = sel.Datos;
             }
+            txtUsuario.Focus();
         }
 
         private void CargarDep()
@@ -626,14 +627,14 @@ namespace SystemTickets
                 if (isEdit == false)
                 {
                     selectMaxId();
-                    agregaIdaDepyPer();
+                    
                     InsertarRegistro();
                 }
                 else
                 {
                     ActualizarRegistro();
                 }
-
+                agregaIdaDepyPer();
                 eliminaDepyPer();
                 recorrerdep();
                 recorrerper();
