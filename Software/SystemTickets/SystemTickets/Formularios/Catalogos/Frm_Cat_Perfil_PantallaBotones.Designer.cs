@@ -254,8 +254,6 @@
             this.gridColumn1.Caption = "cod. Perfil";
             this.gridColumn1.FieldName = "c_codigo_per";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
             // 
             // gridColumn2
             // 
@@ -263,15 +261,13 @@
             this.gridColumn2.FieldName = "v_nombre_per";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "cod. pant - boton";
             this.gridColumn3.FieldName = "id_pantalla_boton";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
             // 
             // gridColumn4
             // 
@@ -279,7 +275,7 @@
             this.gridColumn4.FieldName = "v_pantalla_boton";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 1;
             // 
             // panelControl1
             // 

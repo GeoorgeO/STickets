@@ -130,6 +130,21 @@ namespace SystemTickets
             }
         }
 
+        private Boolean verificaPerPanBot()
+        {
+            int f = 0, xRow;
+            for (f = 0; f < gridView1.RowCount; f++)
+            {
+                xRow = gridView1.GetVisibleRowHandle(f);
+
+                if (luePerfil.EditValue.ToString() == gridView1.GetRowCellValue(xRow, "c_codigo_per").ToString() && luePantallaBoton.EditValue.ToString() == gridView1.GetRowCellValue(xRow, "id_pantalla_boton").ToString())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void InsertarRegistro()
         {
             CLS_CatPerfil_PantallaBotones x = new CLS_CatPerfil_PantallaBotones();
@@ -208,7 +223,15 @@ namespace SystemTickets
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            InsertarRegistro();
+            if (verificaPerPanBot() == true)
+            {
+                XtraMessageBox.Show("Ya existe en la lista este perfil con el pantalla boton seleccionado.");
+            }
+            else
+            {
+                InsertarRegistro();
+            }
+           
         }
 
         private void btnNuevo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
