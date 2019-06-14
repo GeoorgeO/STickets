@@ -96,10 +96,7 @@ namespace SystemTickets
             for (f=0;f< gridView2.RowCount;f++)
             {
                 xRow = gridView2.GetVisibleRowHandle(f);
-                
-                
 
-             
                 InsertarRegistroDep(gridView2.GetRowCellValue(xRow, "c_codigo_usu").ToString(), gridView2.GetRowCellValue(xRow, "c_codigo_dep").ToString());
             }
         }
@@ -111,11 +108,38 @@ namespace SystemTickets
             {
                 xRow = gridView3.GetVisibleRowHandle(f);
 
-
-
-
                 InsertarRegistroPer(gridView3.GetRowCellValue(xRow, "c_codigo_usu").ToString(), gridView3.GetRowCellValue(xRow, "c_codigo_per").ToString());
             }
+        }
+
+        private Boolean verificaExisteDep()
+        {
+            int f = 0, xRow;
+            for (f = 0; f < gridView2.RowCount; f++)
+            {
+                xRow = gridView2.GetVisibleRowHandle(f);
+
+                if (lueDep.EditValue.ToString()== gridView2.GetRowCellValue(xRow, "c_codigo_dep").ToString())
+                {
+                    return true;
+                } 
+            }
+            return false;
+        }
+
+        private Boolean verificaExistePer()
+        {
+            int f = 0, xRow;
+            for (f = 0; f < gridView3.RowCount; f++)
+            {
+                xRow = gridView3.GetVisibleRowHandle(f);
+
+                if (luePer.EditValue.ToString() == gridView3.GetRowCellValue(xRow, "c_codigo_per").ToString())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void AgregaRenglonDep(string val1, string val2, string val3)
@@ -703,7 +727,14 @@ namespace SystemTickets
         {
             if (lueDep.EditValue != null )
             { 
-                AgregaRenglonDep("", lueDep.EditValue.ToString(), lueDep.Text);
+                if (verificaExisteDep() == true)
+                {
+                    XtraMessageBox.Show("Ya existe este departamento en la lista.");
+                }
+                else
+                {
+                    AgregaRenglonDep("", lueDep.EditValue.ToString(), lueDep.Text);
+                }
             }
             else
             {
@@ -724,7 +755,14 @@ namespace SystemTickets
         {
             if (luePer.EditValue != null)
             {
-                AgregaRenglonPer("", luePer.EditValue.ToString(), luePer.Text);
+                if (verificaExistePer() == true)
+                {
+                    XtraMessageBox.Show("Ya existe este perfil en la lista.");
+                }
+                else
+                {
+                    AgregaRenglonPer("", luePer.EditValue.ToString(), luePer.Text);
+                }
             }
             else
             {

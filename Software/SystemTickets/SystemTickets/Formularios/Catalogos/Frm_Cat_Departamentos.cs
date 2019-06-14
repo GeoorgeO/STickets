@@ -113,6 +113,7 @@ namespace SystemTickets
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
                 CargarPantallas();
+                SeleccionarJefe();
             }
             else
             {
@@ -133,6 +134,7 @@ namespace SystemTickets
                 XtraMessageBox.Show("Se ha Actualizado el registro con exito");
                 LimpiarCampos();
                 CargarPantallas();
+                SeleccionarJefe();
             }
             else
             {
