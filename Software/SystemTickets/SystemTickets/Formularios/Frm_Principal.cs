@@ -89,5 +89,14 @@ namespace SystemTickets
             Frm_Cat_Perfiles.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Perfiles.DefInstance.Show();
         }
+
+        private void btnPerfilPantallaBoton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Cat_Perfil_PantallaBotones.DefInstance.MdiParent = this;
+            Frm_Cat_Perfil_PantallaBotones.DefInstance.c_codigo_pan = "0010";
+            Frm_Cat_Perfil_PantallaBotones.DefInstance.c_codigo_usu = c_codigo_usu;
+            Frm_Cat_Perfil_PantallaBotones.DefInstance.c_codigo_per = c_codigo_per;
+            Frm_Cat_Perfil_PantallaBotones.DefInstance.Show();
+        }
     }
 }

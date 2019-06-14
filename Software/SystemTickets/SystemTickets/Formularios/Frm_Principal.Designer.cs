@@ -177,6 +177,7 @@
             this.btnPerfilPantallaBoton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPerfilPantallaBoton.ImageOptions.Image")));
             this.btnPerfilPantallaBoton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPerfilPantallaBoton.ImageOptions.LargeImage")));
             this.btnPerfilPantallaBoton.Name = "btnPerfilPantallaBoton";
+            this.btnPerfilPantallaBoton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPerfilPantallaBoton_ItemClick);
             // 
             // ribbonPage1
             // 
