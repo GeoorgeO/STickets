@@ -143,6 +143,7 @@
             this.btnActividades.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnActividades.ImageOptions.Image")));
             this.btnActividades.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnActividades.ImageOptions.LargeImage")));
             this.btnActividades.Name = "btnActividades";
+            this.btnActividades.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnActividades_ItemClick);
             // 
             // btnUsuarios
             // 

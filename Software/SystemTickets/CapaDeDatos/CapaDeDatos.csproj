@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\CLS_CatActividades.cs" />
     <Compile Include="Clases\CLS_CatBotones.cs" />
     <Compile Include="Clases\CLS_CatDepartamentos.cs" />
     <Compile Include="Clases\CLS_CatJefesarea.cs" />
