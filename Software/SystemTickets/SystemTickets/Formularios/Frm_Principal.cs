@@ -93,7 +93,7 @@ namespace SystemTickets
         private void btnPerfilPantallaBoton_ItemClick(object sender, ItemClickEventArgs e)
         {
             Frm_Cat_Perfil_PantallaBotones.DefInstance.MdiParent = this;
-            Frm_Cat_Perfil_PantallaBotones.DefInstance.c_codigo_pan = "0010";
+            Frm_Cat_Perfil_PantallaBotones.DefInstance.c_codigo_pan = "0009";
             Frm_Cat_Perfil_PantallaBotones.DefInstance.c_codigo_usu = c_codigo_usu;
             Frm_Cat_Perfil_PantallaBotones.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Perfil_PantallaBotones.DefInstance.Show();
@@ -106,6 +106,15 @@ namespace SystemTickets
             Frm_Cat_Actividades.DefInstance.c_codigo_usu = c_codigo_usu;
             Frm_Cat_Actividades.DefInstance.c_codigo_per = c_codigo_per;
             Frm_Cat_Actividades.DefInstance.Show();
+        }
+
+        private void btnDepartamentoActividad_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Frm_Cat_Departamento_Actividad.DefInstance.MdiParent = this;
+            Frm_Cat_Departamento_Actividad.DefInstance.c_codigo_pan = "0010";
+            Frm_Cat_Departamento_Actividad.DefInstance.c_codigo_usu = c_codigo_usu;
+            Frm_Cat_Departamento_Actividad.DefInstance.c_codigo_per = c_codigo_per;
+            Frm_Cat_Departamento_Actividad.DefInstance.Show();
         }
     }
 }

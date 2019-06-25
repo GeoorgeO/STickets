@@ -1,4 +1,4 @@
-﻿namespace SystemTickets.Formularios.Catalogos
+﻿namespace SystemTickets
 {
     partial class Frm_Cat_Departamento_Actividad
     {
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cat_Departamento_Actividad));
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnNuevo = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -43,6 +44,11 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.sbActividad = new DevExpress.XtraEditors.SimpleButton();
+            this.sbAlta = new DevExpress.XtraEditors.SimpleButton();
+            this.lueDep = new DevExpress.XtraEditors.LookUpEdit();
+            this.txtActividad = new DevExpress.XtraEditors.TextEdit();
+            this.txtId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -51,22 +57,17 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDep.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtActividad.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -122,6 +123,7 @@
             this.btnNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.ImageOptions.Image")));
             this.btnNuevo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNuevo.ImageOptions.LargeImage")));
             this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNuevo_ItemClick);
             // 
             // btnGuardar
             // 
@@ -130,6 +132,7 @@
             this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
             this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
             this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
             // 
             // btnEliminar
             // 
@@ -138,6 +141,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
             this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminar_ItemClick);
             // 
             // btnSalir
             // 
@@ -146,6 +150,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -205,11 +210,11 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.simpleButton5);
-            this.panelControl2.Controls.Add(this.simpleButton4);
-            this.panelControl2.Controls.Add(this.lookUpEdit1);
-            this.panelControl2.Controls.Add(this.textEdit3);
-            this.panelControl2.Controls.Add(this.textEdit2);
+            this.panelControl2.Controls.Add(this.sbActividad);
+            this.panelControl2.Controls.Add(this.sbAlta);
+            this.panelControl2.Controls.Add(this.lueDep);
+            this.panelControl2.Controls.Add(this.txtActividad);
+            this.panelControl2.Controls.Add(this.txtId);
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -218,6 +223,52 @@
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
             this.panelControl2.Size = new System.Drawing.Size(466, 488);
             this.panelControl2.TabIndex = 15;
+            // 
+            // sbActividad
+            // 
+            this.sbActividad.Location = new System.Drawing.Point(408, 78);
+            this.sbActividad.Name = "sbActividad";
+            this.sbActividad.Size = new System.Drawing.Size(51, 23);
+            this.sbActividad.TabIndex = 8;
+            this.sbActividad.Text = "...";
+            this.sbActividad.Click += new System.EventHandler(this.sbActividad_Click);
+            // 
+            // sbAlta
+            // 
+            this.sbAlta.Location = new System.Drawing.Point(408, 39);
+            this.sbAlta.Name = "sbAlta";
+            this.sbAlta.Size = new System.Drawing.Size(51, 23);
+            this.sbAlta.TabIndex = 7;
+            this.sbAlta.Text = "Alta";
+            this.sbAlta.Click += new System.EventHandler(this.sbAlta_Click);
+            // 
+            // lueDep
+            // 
+            this.lueDep.Location = new System.Drawing.Point(102, 41);
+            this.lueDep.MenuManager = this.barManager1;
+            this.lueDep.Name = "lueDep";
+            this.lueDep.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueDep.Size = new System.Drawing.Size(300, 20);
+            this.lueDep.TabIndex = 6;
+            // 
+            // txtActividad
+            // 
+            this.txtActividad.Location = new System.Drawing.Point(179, 79);
+            this.txtActividad.MenuManager = this.barManager1;
+            this.txtActividad.Name = "txtActividad";
+            this.txtActividad.Properties.ReadOnly = true;
+            this.txtActividad.Size = new System.Drawing.Size(223, 20);
+            this.txtActividad.TabIndex = 5;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(102, 79);
+            this.txtId.MenuManager = this.barManager1;
+            this.txtId.Name = "txtId";
+            this.txtId.Properties.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(71, 20);
+            this.txtId.TabIndex = 4;
             // 
             // labelControl2
             // 
@@ -266,6 +317,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(196, 422);
             this.treeView1.TabIndex = 14;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // simpleButton3
             // 
@@ -291,48 +343,6 @@
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Alta";
             // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(102, 79);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(51, 20);
-            this.textEdit2.TabIndex = 4;
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(160, 79);
-            this.textEdit3.MenuManager = this.barManager1;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(242, 20);
-            this.textEdit3.TabIndex = 5;
-            // 
-            // lookUpEdit1
-            // 
-            this.lookUpEdit1.Location = new System.Drawing.Point(102, 41);
-            this.lookUpEdit1.MenuManager = this.barManager1;
-            this.lookUpEdit1.Name = "lookUpEdit1";
-            this.lookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEdit1.Size = new System.Drawing.Size(300, 20);
-            this.lookUpEdit1.TabIndex = 6;
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Location = new System.Drawing.Point(408, 39);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(51, 23);
-            this.simpleButton4.TabIndex = 7;
-            this.simpleButton4.Text = "...";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Location = new System.Drawing.Point(408, 78);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(51, 23);
-            this.simpleButton5.TabIndex = 8;
-            this.simpleButton5.Text = "...";
-            // 
             // Frm_Cat_Departamento_Actividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,18 +356,19 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Cat_Departamento_Actividad";
             this.Text = "Frm_Cat_Departamento_Actividad";
+            this.Load += new System.EventHandler(this.Frm_Cat_Departamento_Actividad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lueDep.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtActividad.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,8 +390,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtActividad;
+        private DevExpress.XtraEditors.TextEdit txtId;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
@@ -389,8 +400,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
+        private DevExpress.XtraEditors.SimpleButton sbActividad;
+        private DevExpress.XtraEditors.SimpleButton sbAlta;
+        private DevExpress.XtraEditors.LookUpEdit lueDep;
     }
 }
