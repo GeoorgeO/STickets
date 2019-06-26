@@ -161,6 +161,7 @@
             this.btnDepartamentoActividad.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartamentoActividad.ImageOptions.Image")));
             this.btnDepartamentoActividad.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDepartamentoActividad.ImageOptions.LargeImage")));
             this.btnDepartamentoActividad.Name = "btnDepartamentoActividad";
+            this.btnDepartamentoActividad.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDepartamentoActividad_ItemClick);
             // 
             // btnPantallaBoton
             // 

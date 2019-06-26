@@ -303,6 +303,9 @@ namespace SystemTickets
         private void sbAlta_Click(object sender, EventArgs e)
         {
             Frm_Cat_Departamentos Dep = new Frm_Cat_Departamentos();
+            Dep.c_codigo_pan = "0006";
+            Dep.c_codigo_usu = c_codigo_usu;
+            Dep.c_codigo_per = c_codigo_per;
             Dep.ShowDialog();
             lueDep.Properties.DataSource = null;
             CargarDepartamentos();

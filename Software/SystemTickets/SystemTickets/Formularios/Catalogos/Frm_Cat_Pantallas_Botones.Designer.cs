@@ -47,15 +47,15 @@
             this.dtgBotones = new DevExpress.XtraGrid.GridControl();
             this.dtgValBotones = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.abBoton = new DevExpress.XtraEditors.SimpleButton();
+            this.sbPantalla = new DevExpress.XtraEditors.SimpleButton();
             this.cmbBotones = new DevExpress.XtraEditors.LookUpEdit();
             this.cmbPantallas = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -149,6 +149,7 @@
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
             this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
             this.btnSalir.Name = "btnSalir";
+            this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
             // bEstado
             // 
@@ -245,6 +246,14 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Id";
+            this.gridColumn2.FieldName = "id_pantalla_boton";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
@@ -257,8 +266,8 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.simpleButton2);
-            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.abBoton);
+            this.groupControl1.Controls.Add(this.sbPantalla);
             this.groupControl1.Controls.Add(this.cmbBotones);
             this.groupControl1.Controls.Add(this.cmbPantallas);
             this.groupControl1.Controls.Add(this.labelControl2);
@@ -270,23 +279,25 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Pantallas Botones";
             // 
-            // simpleButton2
+            // abBoton
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(294, 62);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 5;
-            this.simpleButton2.Text = "Alta";
+            this.abBoton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("abBoton.ImageOptions.Image")));
+            this.abBoton.Location = new System.Drawing.Point(294, 62);
+            this.abBoton.Name = "abBoton";
+            this.abBoton.Size = new System.Drawing.Size(75, 23);
+            this.abBoton.TabIndex = 5;
+            this.abBoton.Text = "Alta";
+            this.abBoton.Click += new System.EventHandler(this.abBoton_Click);
             // 
-            // simpleButton1
+            // sbPantalla
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(294, 30);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "Alta";
+            this.sbPantalla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("sbPantalla.ImageOptions.Image")));
+            this.sbPantalla.Location = new System.Drawing.Point(294, 30);
+            this.sbPantalla.Name = "sbPantalla";
+            this.sbPantalla.Size = new System.Drawing.Size(75, 23);
+            this.sbPantalla.TabIndex = 4;
+            this.sbPantalla.Text = "Alta";
+            this.sbPantalla.Click += new System.EventHandler(this.sbPantalla_Click);
             // 
             // cmbBotones
             // 
@@ -326,14 +337,6 @@
             this.labelControl1.Size = new System.Drawing.Size(43, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Pantallas";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Id";
-            this.gridColumn2.FieldName = "id_pantalla_boton";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
             // 
             // Frm_Cat_Pantallas_Botones
             // 
@@ -392,8 +395,8 @@
         private DevExpress.XtraEditors.LookUpEdit cmbBotones;
         private DevExpress.XtraEditors.LookUpEdit cmbPantallas;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton abBoton;
+        private DevExpress.XtraEditors.SimpleButton sbPantalla;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

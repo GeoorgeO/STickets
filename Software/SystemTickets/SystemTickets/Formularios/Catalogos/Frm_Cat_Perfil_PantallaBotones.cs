@@ -109,6 +109,14 @@ namespace SystemTickets
                 gcPerfilPantBot.DataSource = sel.Datos;
             }
 
+            cargarPan();
+            cargarPer();
+
+
+        }
+
+        private void cargarPan()
+        {
             CLS_CatPantallas selPan = new CLS_CatPantallas();
             selPan.MtdSeleccionarPantallas();
             if (selPan.Exito)
@@ -118,7 +126,10 @@ namespace SystemTickets
                 luePantalla.EditValue = null;
                 luePantalla.Properties.DataSource = selPan.Datos;
             }
+        }
 
+        private void cargarPer()
+        {
             CLS_CatPerfiles selPer = new CLS_CatPerfiles();
             selPer.MtdSeleccionarPerfiles();
             if (selPer.Exito)
@@ -257,6 +268,39 @@ namespace SystemTickets
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+
+        private void sbPerfil_Click(object sender, EventArgs e)
+        {
+            Frm_Cat_Perfiles Perfil = new Frm_Cat_Perfiles();
+            Perfil.c_codigo_pan = "0003";
+            Perfil.c_codigo_usu = c_codigo_usu;
+            Perfil.c_codigo_per = c_codigo_per;
+            Perfil.ShowDialog();
+            luePerfil.Properties.DataSource = null;
+            cargarPer();
+        }
+
+        private void sbPantalla_Click(object sender, EventArgs e)
+        {
+            Frm_Cat_Pantallas Pantallas = new Frm_Cat_Pantallas();
+            Pantallas.c_codigo_pan = "0002";
+            Pantallas.c_codigo_usu = c_codigo_usu;
+            Pantallas.c_codigo_per = c_codigo_per;
+            Pantallas.ShowDialog();
+            luePantalla.Properties.DataSource = null;
+            cargarPan();
+        }
+
+        private void sbPanBot_Click(object sender, EventArgs e)
+        {
+            Frm_Cat_Pantallas_Botones Pantallas = new Frm_Cat_Pantallas_Botones();
+            Pantallas.c_codigo_pan = "0008";
+            Pantallas.c_codigo_usu = c_codigo_usu;
+            Pantallas.c_codigo_per = c_codigo_per;
+            Pantallas.ShowDialog();
+            luePantallaBoton.Properties.DataSource = null;
+            CargaPAntallaBotones("");
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -126,7 +126,7 @@ namespace SystemTickets
             CLS_CatDepartamentos ins = new CLS_CatDepartamentos();
             ins.c_codigo_dep = txtId.Text;
             ins.v_nombre_dep = txtNombre.Text;
-            ins.c_codigo_jef = lookUpEdit1.Text;
+            ins.c_codigo_jef = lookUpEdit1.EditValue.ToString();
             ins.MtdActualizarDepartamentos();
             if (ins.Exito)
             {
@@ -190,7 +190,9 @@ namespace SystemTickets
             jefes.c_codigo_usu = c_codigo_usu;
             jefes.c_codigo_per = c_codigo_per;
             jefes.ShowDialog();
-            
+            lookUpEdit1.Properties.DataSource = null;
+            SeleccionarJefe();
+
         }
 
         private void Frm_Cat_Departamentos_Load(object sender, EventArgs e)

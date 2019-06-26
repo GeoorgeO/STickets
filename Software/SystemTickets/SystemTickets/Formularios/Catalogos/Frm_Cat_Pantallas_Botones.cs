@@ -155,5 +155,32 @@ namespace SystemTickets
                 }
             }
         }
+
+        private void btnSalir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void sbPantalla_Click(object sender, EventArgs e)
+        {
+            Frm_Cat_Pantallas Pantallas = new Frm_Cat_Pantallas();
+            Pantallas.c_codigo_pan = "0002";
+            Pantallas.c_codigo_usu = c_codigo_usu;
+            Pantallas.c_codigo_per = c_codigo_per;
+            Pantallas.ShowDialog();
+            cmbPantallas.Properties.DataSource = null;
+            SeleccionarPantallas("");
+        }
+
+        private void abBoton_Click(object sender, EventArgs e)
+        {
+            Frm_Cat_Botones Botones = new Frm_Cat_Botones();
+            Botones.c_codigo_pan = "0001";
+            Botones.c_codigo_usu = c_codigo_usu;
+            Botones.c_codigo_per = c_codigo_per;
+            Botones.ShowDialog();
+            cmbBotones.Properties.DataSource = null;
+            SeleccionarBotones("");
+        }
     }
 }

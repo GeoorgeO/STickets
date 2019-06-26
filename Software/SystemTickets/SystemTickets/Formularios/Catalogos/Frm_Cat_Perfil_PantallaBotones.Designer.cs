@@ -52,11 +52,11 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.sbPanBot = new DevExpress.XtraEditors.SimpleButton();
             this.luePantallaBoton = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.sbPantalla = new DevExpress.XtraEditors.SimpleButton();
+            this.sbPerfil = new DevExpress.XtraEditors.SimpleButton();
             this.luePantalla = new DevExpress.XtraEditors.LookUpEdit();
             this.luePerfil = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -289,11 +289,11 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.simpleButton4);
+            this.groupControl1.Controls.Add(this.sbPanBot);
             this.groupControl1.Controls.Add(this.luePantallaBoton);
             this.groupControl1.Controls.Add(this.labelControl3);
-            this.groupControl1.Controls.Add(this.simpleButton2);
-            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.sbPantalla);
+            this.groupControl1.Controls.Add(this.sbPerfil);
             this.groupControl1.Controls.Add(this.luePantalla);
             this.groupControl1.Controls.Add(this.luePerfil);
             this.groupControl1.Controls.Add(this.labelControl2);
@@ -305,13 +305,14 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Perfil Pantallas Botones";
             // 
-            // simpleButton4
+            // sbPanBot
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(244, 98);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton4.TabIndex = 9;
-            this.simpleButton4.Text = "Alta";
+            this.sbPanBot.Location = new System.Drawing.Point(244, 98);
+            this.sbPanBot.Name = "sbPanBot";
+            this.sbPanBot.Size = new System.Drawing.Size(75, 23);
+            this.sbPanBot.TabIndex = 9;
+            this.sbPanBot.Text = "Alta";
+            this.sbPanBot.Click += new System.EventHandler(this.sbPanBot_Click);
             // 
             // luePantallaBoton
             // 
@@ -331,21 +332,23 @@
             this.labelControl3.TabIndex = 7;
             this.labelControl3.Text = "Pantalla Boton:";
             // 
-            // simpleButton2
+            // sbPantalla
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(244, 63);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 5;
-            this.simpleButton2.Text = "Alta";
+            this.sbPantalla.Location = new System.Drawing.Point(244, 63);
+            this.sbPantalla.Name = "sbPantalla";
+            this.sbPantalla.Size = new System.Drawing.Size(75, 23);
+            this.sbPantalla.TabIndex = 5;
+            this.sbPantalla.Text = "Alta";
+            this.sbPantalla.Click += new System.EventHandler(this.sbPantalla_Click);
             // 
-            // simpleButton1
+            // sbPerfil
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(244, 29);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 4;
-            this.simpleButton1.Text = "Alta";
+            this.sbPerfil.Location = new System.Drawing.Point(244, 29);
+            this.sbPerfil.Name = "sbPerfil";
+            this.sbPerfil.Size = new System.Drawing.Size(75, 23);
+            this.sbPerfil.TabIndex = 4;
+            this.sbPerfil.Text = "Alta";
+            this.sbPerfil.Click += new System.EventHandler(this.sbPerfil_Click);
             // 
             // luePantalla
             // 
@@ -438,13 +441,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton sbPantalla;
+        private DevExpress.XtraEditors.SimpleButton sbPerfil;
         private DevExpress.XtraEditors.LookUpEdit luePantalla;
         private DevExpress.XtraEditors.LookUpEdit luePerfil;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton sbPanBot;
         private DevExpress.XtraEditors.LookUpEdit luePantallaBoton;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
