@@ -1,3 +1,4 @@
+USE [STickets]
 -- ================================================
 -- Template generated from Template Explorer using:
 -- Create Procedure (New Menu).SQL
@@ -18,6 +19,9 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPantallasBotones_Buscar_Select')
+DROP PROCEDURE STic_CatPantallasBotones_Buscar_Select 
+go
 CREATE PROCEDURE STic_CatPantallasBotones_Buscar_Select
 	@c_codigo_pan varchar(4),
 	@c_codigo_bot varchar(4)

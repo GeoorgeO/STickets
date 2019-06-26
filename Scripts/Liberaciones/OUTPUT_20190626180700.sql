@@ -1792,6 +1792,7 @@ END
 GO
 
 GO
+USE [STickets]
 -- ================================================
 -- Template generated from Template Explorer using:
 -- Create Procedure (New Menu).SQL
@@ -1812,6 +1813,9 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPantallasBotones_Buscar_Select')
+DROP PROCEDURE STic_CatPantallasBotones_Buscar_Select 
+go
 CREATE PROCEDURE STic_CatPantallasBotones_Buscar_Select
 	@c_codigo_pan varchar(4),
 	@c_codigo_bot varchar(4)
@@ -1829,6 +1833,7 @@ END
 GO
 
 GO
+USE [STickets]
 -- ================================================
 -- Template generated from Template Explorer using:
 -- Create Procedure (New Menu).SQL
@@ -1849,6 +1854,9 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPantallasBotones_Update')
+DROP PROCEDURE STic_CatPantallasBotones_Update 
+go
 CREATE PROCEDURE STic_CatPantallasBotones_Update
 	@id_pantalla_boton int,
 	@c_codigo_pan varchar(4),
@@ -1867,6 +1875,7 @@ END
 GO
 
 GO
+USE [STickets]
 -- ================================================
 -- Template generated from Template Explorer using:
 -- Create Procedure (New Menu).SQL
@@ -1887,6 +1896,9 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPantallasBotones_Insert')
+DROP PROCEDURE STic_CatPantallasBotones_Insert 
+go
 create PROCEDURE STic_CatPantallasBotones_Insert
 	@c_codigo_pan varchar(4),
 	@c_codigo_bot varchar(4)
@@ -1906,6 +1918,7 @@ END
 GO
 
 GO
+USE [STickets]
 -- ================================================
 -- Template generated from Template Explorer using:
 -- Create Procedure (New Menu).SQL
@@ -1926,6 +1939,9 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPantallasBotones_Delete')
+DROP PROCEDURE STic_CatPantallasBotones_Delete 
+go
 CREATE PROCEDURE STic_CatPantallasBotones_Delete
 	@id_pantalla_boton int
 AS
@@ -1953,6 +1969,9 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPantallasBotones_Select')
+DROP PROCEDURE STic_CatPantallasBotones_Select 
+go
 Create PROCEDURE [dbo].[STic_CatPantallasBotones_Select]
 	@c_codigo_pan varchar(4)
 AS
@@ -2817,6 +2836,517 @@ END CATCH
 
 select @Ejecutado Exito
 
+END
+GO
+
+GO
+USE [STickets]
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPerfil_PantallaBotones_Select')
+DROP PROCEDURE STic_CatPerfil_PantallaBotones_Select 
+go
+CREATE PROCEDURE STic_CatPerfil_PantallaBotones_Select
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+
+	select ppb.c_codigo_per,per.v_nombre_per,ppb.id_pantalla_boton,pan.v_nombre_pan+' -| '+bot.v_nombre_bot as v_pantalla_boton
+	from cat_Perfil_PantallaBotones as ppb 
+		inner join cat_Perfiles as per on per.c_codigo_per=ppb.c_codigo_per
+		inner join cat_Pantalla_Botones as pb on pb.id_pantalla_boton=ppb.id_pantalla_boton
+		inner join cat_Pantallas as pan on pan.c_codigo_pan=pb.c_codigo_pan
+		inner join cat_Botones as bot on bot.c_codigo_bot=pb.c_codigo_bot
+END
+GO
+
+GO
+USE [STickets]
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Procedure (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the procedure.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPerfil_PantallaBotones_Insert')
+DROP PROCEDURE STic_CatPerfil_PantallaBotones_Insert 
+go
+CREATE PROCEDURE STic_CatPerfil_PantallaBotones_Insert
+	@c_codigo_per char(4),
+	@id_pantalla_boton	int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+    -- Insert statements for procedure here
+	
+
+	INSERT INTO cat_Perfil_PantallaBotones
+                         (c_codigo_per, id_pantalla_boton)
+	VALUES        (@c_codigo_per,@id_pantalla_boton)
+	
+	select 1
+END
+GO
+
+GO
+USE [STickets]
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Procedure (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the procedure.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPerfil_PantallaBotones_Delete')
+DROP PROCEDURE STic_CatPerfil_PantallaBotones_Delete 
+go
+CREATE PROCEDURE STic_CatPerfil_PantallaBotones_Delete 
+	@c_codigo_per char(4),
+	@id_pantalla_boton	int
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	declare @Ejecutado bit
+		  
+BEGIN TRANSACTION ;  
+ BEGIN TRY  
+
+	DELETE FROM cat_Perfil_PantallaBotones
+	WHERE  (c_codigo_per = @c_codigo_per and id_pantalla_boton=@id_pantalla_boton)
+
+	COMMIT ; 
+    set @Ejecutado=1
+END TRY  
+BEGIN CATCH  
+	rollback ;  
+	set @Ejecutado=0
+END CATCH  
+
+select @Ejecutado Exito
+
+END
+GO
+
+GO
+USE [STickets]
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Procedure (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the procedure.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatPerfil_PantallaBotones_PantallaBotones_Select')
+DROP PROCEDURE STic_CatPerfil_PantallaBotones_PantallaBotones_Select 
+go
+CREATE PROCEDURE STic_CatPerfil_PantallaBotones_PantallaBotones_Select
+	@c_codigo_pan char(4)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+
+    -- Insert statements for procedure here
+	SELECT        pb.id_pantalla_boton, pan.v_nombre_pan+' -| '+bot.v_nombre_bot as v_pantalla_boton
+	FROM            cat_Pantalla_Botones as pb
+	inner join cat_Pantallas as pan on pan.c_codigo_pan=pb.c_codigo_pan
+	inner join cat_Botones as bot on bot.c_codigo_bot=pb.c_codigo_bot
+	where pb.c_codigo_pan=@c_codigo_pan
+
+END
+GO
+
+GO
+USE [STickets]
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatActividades_Select')
+DROP PROCEDURE STic_CatActividades_Select 
+go
+CREATE PROCEDURE STic_CatActividades_Select
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+
+
+
+select c_codigo_act,v_nombre_act,c_actividad_padre,(select temp.v_nombre_act from cat_Actividades as temp where temp.c_codigo_act=act.c_actividad_padre) as v_nombre_act_padre,v_descripcion_act from cat_Actividades as act order by c_codigo_act
+END
+GO
+
+GO
+USE [STickets]
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatActividades_Actividad_Select')
+DROP PROCEDURE STic_CatActividades_Actividad_Select 
+go
+CREATE PROCEDURE STic_CatActividades_Actividad_Select
+	@c_codigo_act char(10)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+
+select c_actividad_padre,
+	(select t.v_nombre_act from cat_Actividades as t where t.c_codigo_act=act.c_actividad_padre) as v_nombre_act_padre,
+	v_descripcion_act 
+from cat_Actividades as act 
+where c_codigo_act=@c_codigo_act
+
+END
+GO
+
+GO
+USE [STickets]
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatActividades_Delete')
+DROP PROCEDURE STic_CatActividades_Delete 
+go
+CREATE PROCEDURE STic_CatActividades_Delete 
+	@c_codigo_act	char(10)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	declare @Ejecutado bit
+		  
+BEGIN TRANSACTION ;  
+ BEGIN TRY  
+
+	DELETE FROM cat_Actividades
+	WHERE  (c_codigo_act = @c_codigo_act)
+
+	COMMIT ; 
+    set @Ejecutado=1
+END TRY  
+BEGIN CATCH  
+	rollback ;  
+	set @Ejecutado=0
+END CATCH  
+
+select @Ejecutado Exito
+
+END
+GO
+
+GO
+USE [STickets]
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Procedure (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the procedure.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatActividades_Update')
+DROP PROCEDURE STic_CatActividades_Update 
+go
+CREATE PROCEDURE STic_CatActividades_Update
+	@c_codigo_act	char(10),
+	@v_nombre_act varchar(200),
+	@v_descripcion_act	varchar(max)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	UPDATE       cat_Actividades
+	SET               v_descripcion_act = @v_descripcion_act, v_nombre_act=@v_nombre_act
+	WHERE        (c_codigo_act = @c_codigo_act)
+
+	SELECT        c_codigo_act, v_nombre_act,c_actividad_padre, v_descripcion_act
+	FROM            cat_Actividades
+	WHERE        (c_codigo_act = @c_codigo_act)
+END
+GO
+
+GO
+USE [STickets]
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatActividades_Insert')
+DROP PROCEDURE STic_CatActividades_Insert 
+go
+CREATE PROCEDURE STic_CatActividades_Insert
+	@v_nombre_act	varchar(200),
+	@c_actividad_padre char(10),
+	@v_descripcion_act varchar(max)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	declare @c_codigo_act char(10)
+	declare @Numero int
+	select @Numero=isnull(Max(c_codigo_act),0)+1 from cat_Actividades
+
+	Set @c_codigo_act=RIGHT('0000000000' + Ltrim(Rtrim(@Numero)),10)
+    -- Insert statements for procedure here
+	INSERT INTO cat_Actividades
+                         (c_codigo_act, v_nombre_act,c_actividad_padre,v_descripcion_act)
+	VALUES        (@c_codigo_act,@v_nombre_act,@c_actividad_padre,@v_descripcion_act)
+	
+	SELECT        c_codigo_act, v_nombre_act, c_actividad_padre, v_descripcion_act
+	FROM            cat_Actividades
+	WHERE        (c_codigo_act = @c_codigo_act) 
+END
+GO
+
+GO
+USE [STickets]
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Procedure (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the procedure.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatDepartamento_Actividad_Select')
+DROP PROCEDURE STic_CatDepartamento_Actividad_Select 
+go
+CREATE PROCEDURE STic_CatDepartamento_Actividad_Select
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    select da.c_codigo_dep,
+        dep.v_nombre_dep,
+        da.c_codigo_act,
+        act.v_nombre_act,
+        act.c_actividad_padre
+    from cat_departamento_actividad as da
+    inner join cat_departamentos as dep on dep.c_codigo_dep=da.c_codigo_dep
+    inner join cat_actividades as act on act.c_codigo_act=da.c_codigo_act
+    union
+    select '','', c_codigo_act,v_nombre_act,c_actividad_padre
+    from cat_actividades
+    order by 3
+
+END
+GO
+
+GO
+USE [STickets]
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatDepartamento_Actividad_Delete')
+DROP PROCEDURE STic_CatDepartamento_Actividad_Delete 
+go
+CREATE PROCEDURE STic_CatDepartamento_Actividad_Delete 
+	@c_codigo_dep	char(4),
+	@c_codigo_act char(10)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	declare @Ejecutado bit
+		  
+BEGIN TRANSACTION ;  
+ BEGIN TRY  
+
+	DELETE FROM cat_Departamento_Actividad
+	WHERE  (c_codigo_dep = @c_codigo_dep and c_codigo_act=@c_codigo_act)
+
+	COMMIT ; 
+    set @Ejecutado=1
+END TRY  
+BEGIN CATCH  
+	rollback ;  
+	set @Ejecutado=0
+END CATCH  
+
+select @Ejecutado Exito
+
+END
+GO
+
+GO
+USE [STickets]
+-- ================================================
+-- Template generated from Template Explorer using:
+-- Create Procedure (New Menu).SQL
+--
+-- Use the Specify Values for Template Parameters 
+-- command (Ctrl-Shift-M) to fill in the parameter 
+-- values below.
+--
+-- This block of comments will not be included in
+-- the definition of the procedure.
+-- ================================================
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+IF  EXISTS (SELECT * FROM SYS.OBJECTS WHERE TYPE = 'P' AND NAME = 'STic_CatDepartamento_Actividad_Insert')
+DROP PROCEDURE STic_CatDepartamento_Actividad_Insert 
+go
+CREATE PROCEDURE STic_CatDepartamento_Actividad_Insert
+	@c_codigo_dep	char(4),
+	@c_codigo_act char(10)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+
+	
+    -- Insert statements for procedure here
+	INSERT INTO cat_Departamento_Actividad
+                         (c_codigo_dep, c_codigo_act)
+	VALUES        (@c_codigo_dep,@c_codigo_act)
+	
+	SELECT        c_codigo_dep, c_codigo_act
+	FROM            cat_Departamento_Actividad
+	WHERE        (c_codigo_dep = @c_codigo_dep) 
 END
 GO
 
